@@ -341,9 +341,51 @@
             </div>
             <div class="hk-row">
 
-                <div class="col-lg-1">
-
-                </div>
+                <div class="col-lg-2 mb-30">
+                    @foreach ($kamar178 as $k178)
+                            <a href="#" data-toggle="modal" data-target="#ChoiceModal178">
+                        @if ($k178->hasil > 0)
+                            <div id="icu1" class="card bg-primary">
+                            <div class="card-header text-white">PARKIT 208-1</div>
+                        @elseif ($bk178 > 0)
+                            <div id="icu1" class="card bg-warning">
+                                    <div class="card-header text-white">PARKIT 208-1</div>
+                        @else
+                            <div id="icu1" class="card bg-light">
+                            <div class="card-header ">PARKIT 208-1</div>
+                        @endif
+                                
+                                <div class="card-body">
+                                    @foreach ($isi178 as $i178)
+                                        <h5 class="card-title text-center"><i class="material-icons">single_bed</i> {{ $i178->kapasitas }}</h5>
+                                        
+                                        @if ($i178->kapasitas == 1)
+                                            @if ($i178->booked == 0 && $i178->bkg == 0)
+                                                <p class="card-text">Ruangan Tersedia</p>
+                                            @else
+                                                <ul>
+                                                    @foreach ($pn178 as $p)
+                                                        <li class="text-white">{{ $p->nama_pasien }}&nbsp;&nbsp;&nbsp;{{ $p->tgm }}&nbsp;/&nbsp;{{ $p->penanggungjawab }}</li>    
+                                                    @endforeach
+                                                </ul>
+                                            @endif
+                                        @else
+                                            @if ($i178->booked == 0 && $i178->bkg == 0)
+                                                <p class="card-text">Ruangan Tersedia</p>
+                                            @else
+                                            <ul>
+                                                @foreach ($pn178 as $p)
+                                                    <li class="text-white">{{ $p->nama_pasien }}&nbsp;&nbsp;&nbsp;{{ $p->tgm }}&nbsp;/&nbsp;{{ $p->penanggungjawab }}</li>    
+                                                @endforeach
+                                            </ul>
+                                            @endif
+                                        @endif
+                                    @endforeach
+                                </div>
+                            </div>
+                            </a>
+                    @endforeach
+                        </div>
                 <div class="col-lg-2 mb-30">
             @foreach ($kamar34 as $k34)
                     <a href="#" data-toggle="modal" data-target="#ChoiceModal34">
@@ -387,10 +429,6 @@
                     </div>
                     </a>
             @endforeach
-                </div>
-                
-                <div class="col-lg-1">
-
                 </div>
                 <div class="col-lg-2 mb-30">
             @foreach ($kamar35 as $k35)
@@ -1222,6 +1260,59 @@
                         </button>
                     @else
                         <a href="{{ url('/booking-keluar/27/paviliun2') }}" class="btn btn-outline-primary btn-lg btn-block" >
+                            Pasien Keluar Rawat Inap
+                        </a>
+                    @endif
+                @endforeach
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+{{-- Modal Pilihan --}}
+<div class="modal fade" id="ChoiceModal178" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cModalTitle">Entry Data </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @foreach ($isi178 as $i178)
+                    @if ($i178->booked == $i178->kapasitas)
+                        <form action="">
+                            <input type="submit" class="btn btn-outline-primary btn-lg btn-block mb-2" value="Entry Pasien Masuk Rawat Inap" disabled>
+                        </form>
+                    @else
+                        <a href="{{ url('/booking-mrs/178/paviliun2') }}" class="btn btn-outline-primary btn-lg btn-block">
+                            Entry Pasien Masuk Rawat Inap
+                        </a>
+                    @endif
+                @endforeach
+                @foreach ($isi178 as $i178)
+                    @if ($i178->booked > 0)
+                        <button type="button" class="btn btn-outline-primary btn-lg btn-block" data-toggle="modal" id="keluar" data-target="#KeluarForm" disabled>
+                            Entry Pasien Reservasi
+                        </button>
+                    @else
+                        <a href="{{ url('/booking-page/178/paviliun2') }}" class="btn btn-outline-primary btn-lg btn-block" >
+                            Entry Pasien Reservasi
+                        </a>
+                    @endif
+                @endforeach
+                @foreach ($isi178 as $i178)
+                    @if ($i178->booked == 0)
+                        <button type="button" class="btn btn-outline-primary btn-lg btn-block" data-toggle="modal" id="keluar" data-target="#KeluarForm" disabled>
+                            Pasien Keluar Rawat Inap
+                        </button>
+                    @else
+                        <a href="{{ url('/booking-keluar/178/paviliun2') }}" class="btn btn-outline-primary btn-lg btn-block" >
                             Pasien Keluar Rawat Inap
                         </a>
                     @endif

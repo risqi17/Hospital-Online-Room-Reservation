@@ -357,6 +357,8 @@ class RuangController extends Controller
     }
 
     public function paviliun2(){
+        $data['kamar178'] = DB::select('SELECT count(*) AS hasil FROM reservasi WHERE id_kamar = 178 AND status_kamar = "masuk" AND status_booking = "MRS"');
+
          //cekkamar
          $data['kamar27'] = DB::select('SELECT count(*) AS hasil FROM reservasi WHERE id_kamar = 27 AND status_kamar = "masuk" AND status_booking = "MRS"');
          $data['kamar28'] = DB::select('SELECT count(*) AS hasil FROM reservasi WHERE id_kamar = 28 AND status_kamar = "masuk" AND status_booking = "MRS"');
@@ -388,7 +390,10 @@ class RuangController extends Controller
          $data['kamar50'] = DB::select('SELECT count(*) AS hasil FROM reservasi WHERE id_kamar = 50 AND status_kamar = "masuk" AND status_booking = "MRS"');
          $data['kamar51'] = DB::select('SELECT count(*) AS hasil FROM reservasi WHERE id_kamar = 51 AND status_kamar = "masuk" AND status_booking = "MRS"');
         
+        
          //booking
+         $data['bk178'] = DB::table('reservasi')->where('id_kamar', 178)->where('status_booking', 'Booking')->count();
+
         $data['bk27'] = DB::table('reservasi')->where('id_kamar', 27)->where('status_booking', 'Booking')->count();
         $data['bk28'] = DB::table('reservasi')->where('id_kamar', 28)->where('status_booking', 'Booking')->count();
         $data['bk29'] = DB::table('reservasi')->where('id_kamar', 29)->where('status_booking', 'Booking')->count();
@@ -419,6 +424,8 @@ class RuangController extends Controller
         $data['bk50'] = DB::table('reservasi')->where('id_kamar', 50)->where('status_booking', 'Booking')->count();
         $data['bk51'] = DB::table('reservasi')->where('id_kamar', 51)->where('status_booking', 'Booking')->count();
  
+        $data['pn178'] = DB::select('SELECT nama_pasien, DATE_FORMAT(tgl_masuk, "%d-%m-%Y") AS tgm, penanggungjawab FROM reservasi WHERE id_kamar = 178 AND status_kamar != "keluar" AND status_kamar != "Batal" ');
+
         $data['pn27'] = DB::select('SELECT nama_pasien, DATE_FORMAT(tgl_masuk, "%d-%m-%Y") AS tgm, penanggungjawab FROM reservasi WHERE id_kamar = 27 AND status_kamar != "keluar" AND status_kamar != "Batal" ');
         $data['pn28'] = DB::select('SELECT nama_pasien, DATE_FORMAT(tgl_masuk, "%d-%m-%Y") AS tgm, penanggungjawab FROM reservasi WHERE id_kamar = 28 AND status_kamar != "keluar" AND status_kamar != "Batal" ');
         $data['pn29'] = DB::select('SELECT nama_pasien, DATE_FORMAT(tgl_masuk, "%d-%m-%Y") AS tgm, penanggungjawab FROM reservasi WHERE id_kamar = 29 AND status_kamar != "keluar" AND status_kamar != "Batal" ');
@@ -449,7 +456,16 @@ class RuangController extends Controller
         $data['pn50'] = DB::select('SELECT nama_pasien, DATE_FORMAT(tgl_masuk, "%d-%m-%Y") AS tgm, penanggungjawab FROM reservasi WHERE id_kamar = 50 AND status_kamar != "keluar" AND status_kamar != "Batal" ');
         $data['pn51'] = DB::select('SELECT nama_pasien, DATE_FORMAT(tgl_masuk, "%d-%m-%Y") AS tgm, penanggungjawab FROM reservasi WHERE id_kamar = 51 AND status_kamar != "keluar" AND status_kamar != "Batal" ');
 
-         //isikamar
+        $data['isi178'] = DB::select('SELECT  (SELECT COUNT(*) 
+        FROM reservasi WHERE id_kamar = 178 
+        AND status_kamar = "masuk" 
+        AND status_booking = "MRS") AS booked,
+            (SELECT COUNT(*) FROM reservasi WHERE id_kamar = 178 
+            AND status_kamar != "keluar" 
+            AND status_booking = "Booking") AS bkg,  
+                    kapasitas 
+                    FROM kamar WHERE id_kamar = "178"');
+        //isikamar
          $data['isi27'] = DB::select('SELECT  (SELECT COUNT(*) 
                                          FROM reservasi WHERE id_kamar = 27 
                                          AND status_kamar = "masuk" 
