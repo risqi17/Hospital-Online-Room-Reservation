@@ -387,38 +387,38 @@
                     @endforeach
                         </div>
                 <div class="col-lg-2 mb-30">
-            @foreach ($kamar34 as $k34)
-                    <a href="#" data-toggle="modal" data-target="#ChoiceModal34">
-                @if ($k34->hasil > 0)
+            @foreach ($kamar179 as $k179)
+                    <a href="#" data-toggle="modal" data-target="#ChoiceModal179">
+                @if ($k179->hasil > 0)
                     <div id="icu1" class="card bg-primary">
-                    <div class="card-header text-white">KENARI 208</div>
-                @elseif ($bk34 > 0)
+                    <div class="card-header text-white">PARKIT 208-2</div>
+                @elseif ($bk179 > 0)
                     <div id="icu1" class="card bg-warning">
-                            <div class="card-header text-white">KENARI 208</div> 
+                            <div class="card-header text-white">PARKIT 208-2</div> 
                 @else
                     <div id="icu1" class="card bg-light">
-                    <div class="card-header ">KENARI 208</div> 
+                    <div class="card-header ">PARKIT 208-2</div> 
                 @endif
                         <div class="card-body">
-                            @foreach ($isi34 as $i34)
-                            <h5 class="card-title text-center"><i class="material-icons">single_bed</i>{{ $i34->kapasitas }}</h5>
+                            @foreach ($isi179 as $i179)
+                            <h5 class="card-title text-center"><i class="material-icons">single_bed</i>{{ $i179->kapasitas }}</h5>
                             
-                            @if ($i34->kapasitas == 1)
-                                @if ($i34->booked == 0 && $i34->bkg == 0)
+                            @if ($i179->kapasitas == 1)
+                                @if ($i179->booked == 0 && $i179->bkg == 0)
                                     <p class="card-text">Ruangan Tersedia</p>
                                 @else
                                     <ul>
-                                        @foreach ($pn34 as $p)
+                                        @foreach ($pn179 as $p)
                                             <li class="text-white">{{ $p->nama_pasien }}&nbsp;&nbsp;&nbsp;{{ $p->tgm }}&nbsp;/&nbsp;{{ $p->penanggungjawab }}</li>    
                                         @endforeach
                                     </ul>
                                 @endif
                             @else
-                                @if ($i34->booked == 0 && $i34->bkg == 0)
+                                @if ($i179->booked == 0 && $i179->bkg == 0)
                                     <p class="card-text">Ruangan Tersedia</p>
                                 @else
                                 <ul>
-                                    @foreach ($pn34 as $p)
+                                    @foreach ($pn179 as $p)
                                         <li class="text-white">{{ $p->nama_pasien }}&nbsp;&nbsp;&nbsp;{{ $p->tgm }}&nbsp;/&nbsp;{{ $p->penanggungjawab }}</li>    
                                     @endforeach
                                 </ul>
@@ -1645,7 +1645,7 @@
 </div>
 
 {{-- Modal Pilihan --}}
-<div class="modal fade" id="ChoiceModal34" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="ChoiceModal179" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -1655,35 +1655,35 @@
                 </button>
             </div>
             <div class="modal-body">
-                @foreach ($isi34 as $i34)
-                    @if ($i34->booked == $i34->kapasitas)
+                @foreach ($isi179 as $i179)
+                    @if ($i179->booked == $i179->kapasitas)
                         <form action="">
                             <input type="submit" class="btn btn-outline-primary btn-lg btn-block mb-2" value="Entry Pasien Masuk Rawat Inap" disabled>
                         </form>
                     @else
-                        <a href="{{ url('/booking-mrs/34/paviliun2') }}" class="btn btn-outline-primary btn-lg btn-block">
+                        <a href="{{ url('/booking-mrs/179/paviliun2') }}" class="btn btn-outline-primary btn-lg btn-block">
                             Entry Pasien Masuk Rawat Inap
                         </a>
                     @endif
                 @endforeach
-                @foreach ($isi34 as $i34)
-                    @if ($i34->booked > 0)
+                @foreach ($isi179 as $i179)
+                    @if ($i179->booked > 0)
                         <button type="button" class="btn btn-outline-primary btn-lg btn-block" data-toggle="modal" id="keluar" data-target="#KeluarForm" disabled>
                             Entry Pasien Reservasi
                         </button>
                     @else
-                        <a href="{{ url('/booking-page/34/paviliun2') }}" class="btn btn-outline-primary btn-lg btn-block" >
+                        <a href="{{ url('/booking-page/179/paviliun2') }}" class="btn btn-outline-primary btn-lg btn-block" >
                             Entry Pasien Reservasi
                         </a>
                     @endif
                 @endforeach
-                @foreach ($isi34 as $i34)
-                    @if ($i34->booked == 0)
+                @foreach ($isi179 as $i179)
+                    @if ($i179->booked == 0)
                         <button type="button" class="btn btn-outline-primary btn-lg btn-block" data-toggle="modal" id="keluar" data-target="#KeluarForm" disabled>
                             Pasien Keluar Rawat Inap
                         </button>
                     @else
-                        <a href="{{ url('/booking-keluar/34/paviliun2') }}" class="btn btn-outline-primary btn-lg btn-block" >
+                        <a href="{{ url('/booking-keluar/179/paviliun2') }}" class="btn btn-outline-primary btn-lg btn-block" >
                             Pasien Keluar Rawat Inap
                         </a>
                     @endif
