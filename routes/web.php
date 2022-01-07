@@ -81,6 +81,14 @@ Route::middleware(['logged'])->group(function () {
     Route::get('/fasilitas-kelas2pav', 'FasilitasController@Kelas2pav');
     Route::get('/fasilitas-kelas3', 'FasilitasController@Kelas3');
 
+    //room
+    Route::get('/room', 'RoomController@index');
+    Route::get('/room/tambah', 'RoomController@tambahKamar');
+    Route::post('/room/create', 'RoomController@create');
+    Route::get('/room/edit/{id}', 'RoomController@editKamar');
+    Route::post('/room/update/{id}', 'RoomController@updateKamar');
+    Route::get('/room/delete/{id}', 'RoomController@deleteKamar');
+
 });
 
 

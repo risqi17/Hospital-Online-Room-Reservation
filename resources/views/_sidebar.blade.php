@@ -127,6 +127,12 @@
                         <span class="nav-link-text">Rekap Data</span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/room') }}" >
+                        <span class="feather-icon"><i data-feather="inbox"></i></span>
+                        <span class="nav-link-text">Master Kamar</span>
+                    </a>
+                </li>
                 
             </ul>
 

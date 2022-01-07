@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 07, 2022 at 02:14 PM
--- Server version: 10.4.19-MariaDB
--- PHP Version: 8.0.6
+-- Waktu pembuatan: 07 Jan 2022 pada 15.21
+-- Versi server: 10.4.21-MariaDB
+-- Versi PHP: 7.4.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kamar`
+-- Struktur dari tabel `kamar`
 --
 
 CREATE TABLE `kamar` (
@@ -35,7 +35,7 @@ CREATE TABLE `kamar` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `kamar`
+-- Dumping data untuk tabel `kamar`
 --
 
 INSERT INTO `kamar` (`id_kamar`, `nama_kamar`, `kapasitas`, `group_kamar`) VALUES
@@ -253,12 +253,48 @@ INSERT INTO `kamar` (`id_kamar`, `nama_kamar`, `kapasitas`, `group_kamar`) VALUE
 (212, 'ISOLASI 108-1', 1, 'PAVILIUN1'),
 (213, 'ISOLASI 108-2', 1, 'PAVILIUN1'),
 (214, 'ISOLASI 112-1', 1, 'PAVILIUN1'),
-(215, 'ISOLASI 112-2', 1, 'PAVILIUN1');
+(215, 'ISOLASI 112-2', 1, 'PAVILIUN1'),
+(217, 'ICU 7', 1, 'ICU'),
+(218, 'ICU 8', 1, 'ICU'),
+(219, 'ALAMANDA 108', 3, 'LANTAI1PDP'),
+(220, 'AZALEA 102-1', 1, 'LANTAI1PDP'),
+(221, 'AZALEA 102-2', 1, 'LANTAI1PDP'),
+(222, 'AZALEA 105-1', 1, 'LANTAI1PDP'),
+(223, 'AZALEA 105-2', 1, 'LANTAI1PDP'),
+(224, 'KEMUNING 201', 3, 'LANTAI2RBA1'),
+(225, 'KEMUNING 304', 3, 'LANTAI3OBG'),
+(226, 'ALAMANDA 306', 3, 'LANTAI3OBG'),
+(227, 'AZALEA 308-1', 1, 'LANTAI3OBG'),
+(228, 'AZALEA 308-2', 1, 'LANTAI3OBG'),
+(229, 'TANJUNG 309-1', 1, 'LANTAI3OBG'),
+(230, 'TANJUNG 309-2', 1, 'LANTAI3OBG'),
+(231, 'NICU 1', 1, 'LANTAI3NEO'),
+(232, 'NICU 2', 1, 'LANTAI3NEO'),
+(233, 'NICU 3', 1, 'LANTAI3NEO'),
+(234, 'NICU 4', 1, 'LANTAI3NEO'),
+(235, 'NICU 5', 1, 'LANTAI3NEO'),
+(236, 'NICU 6', 1, 'LANTAI3NEO'),
+(237, 'TANJUNG 1', 1, 'LANTAI3NEO'),
+(238, 'TANJUNG 2', 1, 'LANTAI3NEO'),
+(239, 'TANJUNG 3', 1, 'LANTAI3NEO'),
+(240, 'SERUNI 7', 1, 'LANTAI3NEO'),
+(241, 'SERUNI 8', 1, 'LANTAI3NEO'),
+(242, '1 (ISOLASI TEKNANAN AKTIF)', 1, 'LANTAI3NEO'),
+(243, '2  (ISOLASI TEKNANAN AKTIF)', 1, 'LANTAI3NEO'),
+(244, '3  (ISOLASI TEKNANAN AKTIF)', 1, 'LANTAI3NEO'),
+(245, 'ALAMANDA 403', 3, 'LANTAI4PDW'),
+(246, 'ALAMANDA 405', 3, 'LANTAI4PDW'),
+(247, 'AZALEA 402-1', 1, 'LANTAI4PDW'),
+(248, 'AZALEA 402-2', 1, 'LANTAI4PDW'),
+(249, 'AZALEA 404-1', 1, 'LANTAI4PDW'),
+(250, 'AZALEA 404-2', 1, 'LANTAI4PDW'),
+(251, 'SERUNI 411-5', 1, 'LANTAI4PDW'),
+(252, 'SERUNI 411-6', 1, 'LANTAI4PDW');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pasien`
+-- Struktur dari tabel `pasien`
 --
 
 CREATE TABLE `pasien` (
@@ -270,7 +306,7 @@ CREATE TABLE `pasien` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `reservasi`
+-- Struktur dari tabel `reservasi`
 --
 
 CREATE TABLE `reservasi` (
@@ -288,7 +324,7 @@ CREATE TABLE `reservasi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `reservasi`
+-- Dumping data untuk tabel `reservasi`
 --
 
 INSERT INTO `reservasi` (`id_reservasi`, `nama_pasien`, `penanggungjawab`, `id_kamar`, `tgl_masuk`, `tgl_keluar`, `tgl_booking`, `keterangan`, `status_booking`, `status_kamar`, `no_kamar`) VALUES
@@ -310,7 +346,7 @@ INSERT INTO `reservasi` (`id_reservasi`, `nama_pasien`, `penanggungjawab`, `id_k
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_admin`
+-- Struktur dari tabel `user_admin`
 --
 
 CREATE TABLE `user_admin` (
@@ -325,7 +361,7 @@ CREATE TABLE `user_admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `user_admin`
+-- Dumping data untuk tabel `user_admin`
 --
 
 INSERT INTO `user_admin` (`user_id`, `name`, `email`, `username`, `password`, `avatar`, `level`, `status`) VALUES
@@ -337,53 +373,53 @@ INSERT INTO `user_admin` (`user_id`, `name`, `email`, `username`, `password`, `a
 --
 
 --
--- Indexes for table `kamar`
+-- Indeks untuk tabel `kamar`
 --
 ALTER TABLE `kamar`
   ADD PRIMARY KEY (`id_kamar`);
 
 --
--- Indexes for table `pasien`
+-- Indeks untuk tabel `pasien`
 --
 ALTER TABLE `pasien`
   ADD PRIMARY KEY (`id_pasien`);
 
 --
--- Indexes for table `reservasi`
+-- Indeks untuk tabel `reservasi`
 --
 ALTER TABLE `reservasi`
   ADD PRIMARY KEY (`id_reservasi`);
 
 --
--- Indexes for table `user_admin`
+-- Indeks untuk tabel `user_admin`
 --
 ALTER TABLE `user_admin`
   ADD PRIMARY KEY (`user_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `kamar`
+-- AUTO_INCREMENT untuk tabel `kamar`
 --
 ALTER TABLE `kamar`
-  MODIFY `id_kamar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=216;
+  MODIFY `id_kamar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=253;
 
 --
--- AUTO_INCREMENT for table `pasien`
+-- AUTO_INCREMENT untuk tabel `pasien`
 --
 ALTER TABLE `pasien`
   MODIFY `id_pasien` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `reservasi`
+-- AUTO_INCREMENT untuk tabel `reservasi`
 --
 ALTER TABLE `reservasi`
   MODIFY `id_reservasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
--- AUTO_INCREMENT for table `user_admin`
+-- AUTO_INCREMENT untuk tabel `user_admin`
 --
 ALTER TABLE `user_admin`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
