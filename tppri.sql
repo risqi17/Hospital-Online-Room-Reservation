@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 24 Okt 2020 pada 05.23
--- Versi server: 10.1.39-MariaDB
--- Versi PHP: 7.3.5
+-- Generation Time: Jan 07, 2022 at 02:14 PM
+-- Server version: 10.4.19-MariaDB
+-- PHP Version: 8.0.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -25,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kamar`
+-- Table structure for table `kamar`
 --
 
 CREATE TABLE `kamar` (
@@ -36,7 +35,7 @@ CREATE TABLE `kamar` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `kamar`
+-- Dumping data for table `kamar`
 --
 
 INSERT INTO `kamar` (`id_kamar`, `nama_kamar`, `kapasitas`, `group_kamar`) VALUES
@@ -216,12 +215,50 @@ INSERT INTO `kamar` (`id_kamar`, `nama_kamar`, `kapasitas`, `group_kamar`) VALUE
 (174, 'TANJUNG 410-4', 1, 'LANTAI4PDW'),
 (175, 'SERUNI 4', 1, 'LANTAI3NEO'),
 (176, 'SERUNI 5', 1, 'LANTAI3NEO'),
-(177, 'SERUNI 6', 1, 'LANTAI3NEO');
+(177, 'SERUNI 6', 1, 'LANTAI3NEO'),
+(178, 'PARKIT 208-1', 1, 'PAVILIUN2'),
+(179, 'PARKIT 208-2', 1, 'PAVILIUN2'),
+(180, 'PARKIT 217-1', 1, 'PAVILIUN2'),
+(181, 'PARKIT 217-2', 1, 'PAVILIUN2'),
+(182, 'PARKIT 218-1', 1, 'PAVILIUN2'),
+(183, 'PARKIT 218-2', 1, 'PAVILIUN2'),
+(184, 'PARKIT 219-1', 1, 'PAVILIUN2'),
+(185, 'PARKIT 219-2', 1, 'PAVILIUN2'),
+(186, 'PARKIT 220-1', 1, 'PAVILIUN2'),
+(187, 'PARKIT 220-2', 1, 'PAVILIUN2'),
+(188, 'MERPATI 221-1', 1, 'PAVILIUN2'),
+(189, 'MERPATI 221-2', 1, 'PAVILIUN2'),
+(190, 'MERPATI 221-3', 1, 'PAVILIUN2'),
+(191, 'MERPATI 221-4', 1, 'PAVILIUN2'),
+(192, 'MERPATI 222-1', 1, 'PAVILIUN2'),
+(193, 'MERPATI 222-2', 1, 'PAVILIUN2'),
+(194, 'MERPATI 222-3', 1, 'PAVILIUN2'),
+(195, 'FLAMBOYAN 116-1', 3, 'PAVILIUN1'),
+(196, 'FLAMBOYAN 116-2', 3, 'PAVILIUN1'),
+(197, 'FLAMBOYAN 117-1', 3, 'PAVILIUN1'),
+(198, 'FLAMBOYAN 117-2', 3, 'PAVILIUN1'),
+(199, 'FLAMBOYAN 118-1', 3, 'PAVILIUN1'),
+(200, 'FLAMBOYAN 118-2', 3, 'PAVILIUN1'),
+(201, 'FLAMBOYAN 119-1', 3, 'PAVILIUN1'),
+(202, 'FLAMBOYAN 119-2', 3, 'PAVILIUN1'),
+(203, 'FLAMBOYAN 120-1', 3, 'PAVILIUN1'),
+(204, 'FLAMBOYAN 120-2', 3, 'PAVILIUN1'),
+(205, 'ICU ISOLASI 109', 1, 'PAVILIUN1'),
+(206, 'ICU ISOLASI 110', 1, 'PAVILIUN1'),
+(207, 'ICU ISOLASI 111', 1, 'PAVILIUN1'),
+(208, 'ISOLASI 105-1', 1, 'PAVILIUN1'),
+(209, 'ISOLASI 105-2', 1, 'PAVILIUN1'),
+(210, 'ISOLASI 107-1', 1, 'PAVILIUN1'),
+(211, 'ISOLASI 107-2', 1, 'PAVILIUN1'),
+(212, 'ISOLASI 108-1', 1, 'PAVILIUN1'),
+(213, 'ISOLASI 108-2', 1, 'PAVILIUN1'),
+(214, 'ISOLASI 112-1', 1, 'PAVILIUN1'),
+(215, 'ISOLASI 112-2', 1, 'PAVILIUN1');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pasien`
+-- Table structure for table `pasien`
 --
 
 CREATE TABLE `pasien` (
@@ -233,7 +270,7 @@ CREATE TABLE `pasien` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `reservasi`
+-- Table structure for table `reservasi`
 --
 
 CREATE TABLE `reservasi` (
@@ -243,7 +280,7 @@ CREATE TABLE `reservasi` (
   `id_kamar` int(11) NOT NULL,
   `tgl_masuk` datetime NOT NULL,
   `tgl_keluar` datetime DEFAULT NULL,
-  `tgl_booking` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `tgl_booking` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `keterangan` varchar(100) NOT NULL,
   `status_booking` varchar(100) NOT NULL,
   `status_kamar` varchar(50) DEFAULT NULL,
@@ -251,7 +288,7 @@ CREATE TABLE `reservasi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `reservasi`
+-- Dumping data for table `reservasi`
 --
 
 INSERT INTO `reservasi` (`id_reservasi`, `nama_pasien`, `penanggungjawab`, `id_kamar`, `tgl_masuk`, `tgl_keluar`, `tgl_booking`, `keterangan`, `status_booking`, `status_kamar`, `no_kamar`) VALUES
@@ -273,7 +310,7 @@ INSERT INTO `reservasi` (`id_reservasi`, `nama_pasien`, `penanggungjawab`, `id_k
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user_admin`
+-- Table structure for table `user_admin`
 --
 
 CREATE TABLE `user_admin` (
@@ -288,7 +325,7 @@ CREATE TABLE `user_admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `user_admin`
+-- Dumping data for table `user_admin`
 --
 
 INSERT INTO `user_admin` (`user_id`, `name`, `email`, `username`, `password`, `avatar`, `level`, `status`) VALUES
@@ -300,53 +337,53 @@ INSERT INTO `user_admin` (`user_id`, `name`, `email`, `username`, `password`, `a
 --
 
 --
--- Indeks untuk tabel `kamar`
+-- Indexes for table `kamar`
 --
 ALTER TABLE `kamar`
   ADD PRIMARY KEY (`id_kamar`);
 
 --
--- Indeks untuk tabel `pasien`
+-- Indexes for table `pasien`
 --
 ALTER TABLE `pasien`
   ADD PRIMARY KEY (`id_pasien`);
 
 --
--- Indeks untuk tabel `reservasi`
+-- Indexes for table `reservasi`
 --
 ALTER TABLE `reservasi`
   ADD PRIMARY KEY (`id_reservasi`);
 
 --
--- Indeks untuk tabel `user_admin`
+-- Indexes for table `user_admin`
 --
 ALTER TABLE `user_admin`
   ADD PRIMARY KEY (`user_id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `kamar`
+-- AUTO_INCREMENT for table `kamar`
 --
 ALTER TABLE `kamar`
-  MODIFY `id_kamar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=178;
+  MODIFY `id_kamar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=216;
 
 --
--- AUTO_INCREMENT untuk tabel `pasien`
+-- AUTO_INCREMENT for table `pasien`
 --
 ALTER TABLE `pasien`
   MODIFY `id_pasien` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `reservasi`
+-- AUTO_INCREMENT for table `reservasi`
 --
 ALTER TABLE `reservasi`
   MODIFY `id_reservasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
--- AUTO_INCREMENT untuk tabel `user_admin`
+-- AUTO_INCREMENT for table `user_admin`
 --
 ALTER TABLE `user_admin`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
