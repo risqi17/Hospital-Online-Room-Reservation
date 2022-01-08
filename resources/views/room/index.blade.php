@@ -25,7 +25,7 @@
             <section class="hk-sec-wrapper">
                 <h5 class="hk-sec-title">Data Kamar</h5>
                             <p class="mb-25">Data kamar Rumah Sakit Semen Gresik.</p>
-                            <a href="{{ url('room/tambah') }}" type="button" class="btn btn-primary btn-wth-icon btn-sm">Tambah Kamar</a>
+                            {{-- <a href="{{ url('room/tambah') }}" type="button" class="btn btn-primary btn-wth-icon btn-sm">Tambah Kamar</a> --}}
             </section>
                 <section class="hk-sec-wrapper">
                         <div class="row">
@@ -35,6 +35,7 @@
                                         <thead>
                                             <tr>
                                                 <th style="width:20px">No</th>
+                                                <th style="width:70px">ID Kamar</th>
                                                 <th>Nama Kamar</th>
                                                 <th>Kapasitas</th>
                                                 <th>Group Kamar</th>
@@ -48,12 +49,16 @@
                                             @foreach ($room as $u)
                                                 <tr>
                                                     <td>{{ $no }}</td>
+                                                    <td>{{ $u->id_kamar }}</td>
                                                     <td>{{ $u->nama_kamar }}</td>
                                                     <td>{{ $u->kapasitas }}</td>
                                                     <td>{{ $u->group_kamar }}</td>
                                                     <td>
-                                                        <a href="{{ url('/room/edit') }}/{{ $u->id_kamar }}" type="button" class="btn btn-warning btn-wth-icon btn-sm">Edit</a>
-                                                        <a href="{{ url('/room/delete') }}/{{ $u->id_kamar }}" type="button" class="btn btn-danger btn-wth-icon btn-sm">Delete</a>
+                                                        {{-- <a href="{{ url('/room/edit') }}/{{ $u->id_kamar }}" type="button" class="btn btn-warning btn-wth-icon btn-sm">Edit</a>
+                                                        <a href="{{ url('/room/delete') }}/{{ $u->id_kamar }}" type="button" class="btn btn-danger btn-wth-icon btn-sm">Delete</a> --}}
+
+                                                        <a href="#" type="button" class="btn btn-warning btn-wth-icon btn-sm">Edit</a>
+                                                        <a href="#" type="button" class="btn btn-danger btn-wth-icon btn-sm">Delete</a>
                                                     </td>
                                                 </tr>
                                                 @php
@@ -64,6 +69,7 @@
                                         <tfoot>
                                             <tr>
                                                 <th>No</th>
+                                                <th>ID Kamar</th>
                                                 <th>Nama Kamar</th>
                                                 <th>Kapasitas</th>
                                                 <th>Group Kamar</th>
