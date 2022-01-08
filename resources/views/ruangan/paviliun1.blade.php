@@ -1212,13 +1212,13 @@
                             <a href="#" data-toggle="modal" data-target="#ChoiceModal215">
                         @if ($k215->hasil > 0)
                             <div id="icu1" class="card bg-primary">
-                            <div class="card-header text-white">ICU ISOLASI 109</div>
+                            <div class="card-header text-white">ISOLASI 112-2</div>
                         @elseif ($bk215 > 0)
                             <div id="icu1" class="card bg-warning">
-                            <div class="card-header text-white">ICU ISOLASI 109</div>
+                            <div class="card-header text-white">ISOLASI 112-2</div>
                         @else
                             <div id="icu1" class="card bg-light">
-                            <div class="card-header ">ICU ISOLASI 109</div>
+                            <div class="card-header ">ISOLASI 112-2</div>
                         @endif
                                 
                                 <div class="card-body">

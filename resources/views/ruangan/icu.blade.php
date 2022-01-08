@@ -22,7 +22,7 @@
      <div class="row">
          <div class="col-xl-12">
             <div class="hk-row">
-                <div class="col-lg-3">
+                <div class="col-lg-2">
 
                 </div>
                 
@@ -172,15 +172,6 @@
                             </a>
                     @endforeach
                         </div>
-                
-
-            </div>
-
-            <div class="hk-row">
-                <div class="col-lg-3">
-
-                </div>
-               
 
                 <div class="col-lg-2 mb-30">
                     @foreach ($kamar4 as $k4)
@@ -191,7 +182,7 @@
                         @elseif ($bk4 > 0)
                             <div id="icu1" class="card bg-warning">
                             <div class="card-header text-white">ICU 4</div>
-                       
+                        
                         @else
                             <div id="icu1" class="card bg-light">
                             <div class="card-header ">ICU 4</div>
@@ -228,8 +219,14 @@
                             </a>
                     @endforeach
                         </div>
+                
 
-               
+            </div>
+
+            <div class="hk-row">
+                <div class="col-lg-2">
+
+                </div>      
 
                 <div class="col-lg-2 mb-30">
                     @foreach ($kamar5 as $k5)
@@ -326,6 +323,101 @@
                             </a>
                     @endforeach
                         </div>
+
+                <div class="col-lg-2 mb-30">
+                    @foreach ($kamar217 as $k217)
+                            <a href="#" data-toggle="modal" data-target="#ChoiceModal217">
+                        @if ($k217->hasil > 0)
+                            <div id="icu1" class="card bg-primary">
+                            <div class="card-header text-white">ICU 7</div>
+                        @elseif ($bk217 > 0)
+                            <div id="icu1" class="card bg-warning">
+                            <div class="card-header text-white">ICU 7</div>
+                        
+                        @else
+                            <div id="icu1" class="card bg-light">
+                            <div class="card-header ">ICU 7</div>
+                        @endif
+                                
+                                <div class="card-body">
+                                    @foreach ($isi217 as $i217)
+                                        <h5 class="card-title text-center"><i class="material-icons">single_bed</i> {{ $i217->kapasitas }}</h5>
+                                        
+                                        @if ($i217->kapasitas == 1)
+                                            @if ($i217->booked == 0 && $i217->bkg == 0)
+                                                <p class="card-text">Ruangan Tersedia</p>
+                                            @else
+                                                <ul>
+                                                    @foreach ($pn217 as $p)
+                                                        <li class="text-white">{{ $p->nama_pasien }}&nbsp;&nbsp;&nbsp;{{ $p->tgm }}&nbsp;/&nbsp;{{ $p->penanggungjawab }}</li>    
+                                                    @endforeach
+                                                </ul>
+                                            @endif
+                                        @else
+                                            @if ($i217->booked == 0 && $i217->bkg == 0)
+                                                <p class="card-text">Ruangan Tersedia</p>
+                                            @else
+                                            <ul>
+                                                @foreach ($pn217 as $p)
+                                                    <li class="text-white">{{ $p->nama_pasien }}&nbsp;&nbsp;&nbsp;{{ $p->tgm }}&nbsp;/&nbsp;{{ $p->penanggungjawab }}</li>    
+                                                @endforeach
+                                            </ul>
+                                            @endif
+                                        @endif
+                                    @endforeach
+                                </div>
+                            </div>
+                            </a>
+                    @endforeach
+                        </div>
+
+                <div class="col-lg-2 mb-30">
+                    @foreach ($kamar218 as $k218)
+                            <a href="#" data-toggle="modal" data-target="#ChoiceModal218">
+                        @if ($k218->hasil > 0)
+                            <div id="icu1" class="card bg-primary">
+                            <div class="card-header text-white">ICU 8</div>
+                        @elseif ($bk218 > 0)
+                            <div id="icu1" class="card bg-warning">
+                            <div class="card-header text-white">ICU 8</div>
+                        
+                        @else
+                            <div id="icu1" class="card bg-light">
+                            <div class="card-header ">ICU 8</div>
+                        @endif
+                                
+                                <div class="card-body">
+                                    @foreach ($isi218 as $i218)
+                                        <h5 class="card-title text-center"><i class="material-icons">single_bed</i> {{ $i218->kapasitas }}</h5>
+                                        
+                                        @if ($i218->kapasitas == 1)
+                                            @if ($i218->booked == 0 && $i218->bkg == 0)
+                                                <p class="card-text">Ruangan Tersedia</p>
+                                            @else
+                                                <ul>
+                                                    @foreach ($pn218 as $p)
+                                                        <li class="text-white">{{ $p->nama_pasien }}&nbsp;&nbsp;&nbsp;{{ $p->tgm }}&nbsp;/&nbsp;{{ $p->penanggungjawab }}</li>    
+                                                    @endforeach
+                                                </ul>
+                                            @endif
+                                        @else
+                                            @if ($i218->booked == 0 && $i218->bkg == 0)
+                                                <p class="card-text">Ruangan Tersedia</p>
+                                            @else
+                                            <ul>
+                                                @foreach ($pn218 as $p)
+                                                    <li class="text-white">{{ $p->nama_pasien }}&nbsp;&nbsp;&nbsp;{{ $p->tgm }}&nbsp;/&nbsp;{{ $p->penanggungjawab }}</li>    
+                                                @endforeach
+                                            </ul>
+                                            @endif
+                                        @endif
+                                    @endforeach
+                                </div>
+                            </div>
+                            </a>
+                    @endforeach
+                        </div>
+        
                 
 
             </div>
@@ -686,6 +778,126 @@
         </div>
     </div>
 </div>
+
+{{-- Modal Pilihan --}}
+<div class="modal fade" id="ChoiceModal217" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cModalTitle">Entry Data </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @foreach ($isi217 as $i217)
+                    @if ($i217->booked == $i217->kapasitas)
+                        <form action="">
+                            <input type="submit" class="btn btn-outline-primary btn-lg btn-block mb-2" value="Entry Pasien Masuk Rawat Inap" disabled>
+                        </form>
+                        {{-- <a href="{{ url('/booking-mrs/217/icu') }}" class="btn btn-outline-primary btn-lg btn-block" disabled>
+                            Entry Pasien Masuk Rawat Inap
+                        </a> --}}
+                    @else
+                        <a href="{{ url('/booking-mrs/217/icu') }}" class="btn btn-outline-primary btn-lg btn-block">
+                            Entry Pasien Masuk Rawat Inap
+                        </a>
+                    @endif
+                @endforeach
+                {{-- Ini yang perlu ditambahkan --}}
+                @foreach ($isi217 as $i217)
+                    @if ($i217->booked > 0)
+                        <button type="button" class="btn btn-outline-primary btn-lg btn-block" data-toggle="modal" id="keluar" data-target="#KeluarForm" disabled>
+                            Entry Pasien Reservasi
+                        </button>
+                    @else
+                        <a href="{{ url('/booking-page/217/icu') }}" class="btn btn-outline-primary btn-lg btn-block" >
+                            Entry Pasien Reservasi
+                        </a>
+                    @endif
+                @endforeach
+                {{-- Sampai Sini --}}
+                @foreach ($isi217 as $i217)
+                    @if ($i217->booked == 0)
+                        <button type="button" class="btn btn-outline-primary btn-lg btn-block" data-toggle="modal" id="keluar" data-target="#KeluarForm" disabled>
+                            Pasien Keluar Rawat Inap
+                        </button>
+                    @else
+                        <a href="{{ url('/booking-keluar/217/icu') }}" class="btn btn-outline-primary btn-lg btn-block" >
+                            Pasien Keluar Rawat Inap
+                        </a>
+                    @endif
+                @endforeach
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+{{-- Modal Pilihan --}}
+<div class="modal fade" id="ChoiceModal218" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cModalTitle">Entry Data </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @foreach ($isi218 as $i218)
+                    @if ($i218->booked == $i218->kapasitas)
+                        <form action="">
+                            <input type="submit" class="btn btn-outline-primary btn-lg btn-block mb-2" value="Entry Pasien Masuk Rawat Inap" disabled>
+                        </form>
+                        {{-- <a href="{{ url('/booking-mrs/218/icu') }}" class="btn btn-outline-primary btn-lg btn-block" disabled>
+                            Entry Pasien Masuk Rawat Inap
+                        </a> --}}
+                    @else
+                        <a href="{{ url('/booking-mrs/218/icu') }}" class="btn btn-outline-primary btn-lg btn-block">
+                            Entry Pasien Masuk Rawat Inap
+                        </a>
+                    @endif
+                @endforeach
+                {{-- Ini yang perlu ditambahkan --}}
+                @foreach ($isi218 as $i218)
+                    @if ($i218->booked > 0)
+                        <button type="button" class="btn btn-outline-primary btn-lg btn-block" data-toggle="modal" id="keluar" data-target="#KeluarForm" disabled>
+                            Entry Pasien Reservasi
+                        </button>
+                    @else
+                        <a href="{{ url('/booking-page/218/icu') }}" class="btn btn-outline-primary btn-lg btn-block" >
+                            Entry Pasien Reservasi
+                        </a>
+                    @endif
+                @endforeach
+                {{-- Sampai Sini --}}
+                @foreach ($isi218 as $i218)
+                    @if ($i218->booked == 0)
+                        <button type="button" class="btn btn-outline-primary btn-lg btn-block" data-toggle="modal" id="keluar" data-target="#KeluarForm" disabled>
+                            Pasien Keluar Rawat Inap
+                        </button>
+                    @else
+                        <a href="{{ url('/booking-keluar/218/icu') }}" class="btn btn-outline-primary btn-lg btn-block" >
+                            Pasien Keluar Rawat Inap
+                        </a>
+                    @endif
+                @endforeach
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 
 @endsection

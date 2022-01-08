@@ -16,41 +16,43 @@
      <div class="row">
          <div class="col-xl-12">
             <div class="hk-row">
+                <div class="col-lg-1">
 
-                <div class="col-lg-2 mb-30">
-            @foreach ($kamar85 as $k85)
-                    <a href="#" data-toggle="modal" data-target="#ChoiceModal85">
-                @if ($k85->hasil > 0)
+                </div>
+        <div class="col-lg-2 mb-30">
+            @foreach ($kamar224 as $k224)
+                    <a href="#" data-toggle="modal" data-target="#ChoiceModal224">
+                @if ($k224->hasil > 0)
                     <div id="icu1" class="card bg-primary">
-                    <div class="card-header text-white">AZALEA 205-1</div>
-                @elseif ($bk85 > 0)
+                    <div class="card-header text-white">KEMUNING 201</div>
+                @elseif ($bk224 > 0)
                     <div id="icu1" class="card bg-warning">
-                            <div class="card-header text-white">AZALEA 205-1</div>
+                            <div class="card-header text-white">KEMUNING 201</div>
                 @else
                     <div id="icu1" class="card bg-light">
-                    <div class="card-header ">AZALEA 205-1</div>
+                    <div class="card-header ">KEMUNING 201</div>
                 @endif
 
                         <div class="card-body">
-                            @foreach ($isi85 as $i85)
-                            <h5 class="card-title text-center"><i class="material-icons">single_bed</i>{{ $i85->kapasitas }}</h5>
+                            @foreach ($isi224 as $i224)
+                            <h5 class="card-title text-center"><i class="material-icons">single_bed</i>{{ $i224->kapasitas }}</h5>
                             
-                            @if ($i85->kapasitas == 1)
-                                @if ($i85->booked == 0 && $i85->bkg == 0)
+                            @if ($i224->kapasitas == 1)
+                                @if ($i224->booked == 0 && $i224->bkg == 0)
                                     <p class="card-text">Ruangan Tersedia</p>
                                 @else
                                     <ul>
-                                        @foreach ($pn85 as $p)
+                                        @foreach ($pn224 as $p)
                                             <li class="text-white">{{ $p->nama_pasien }}&nbsp;&nbsp;&nbsp;{{ $p->tgm }}&nbsp;/&nbsp;{{ $p->penanggungjawab }}</li>    
                                         @endforeach
                                     </ul>
                                 @endif
                             @else
-                                @if ($i85->booked == 0 && $i85->bkg == 0)
+                                @if ($i224->booked == 0 && $i224->bkg == 0)
                                     <p class="card-text">Ruangan Tersedia</p>
                                 @else
                                 <ul>
-                                    @foreach ($pn85 as $p)
+                                    @foreach ($pn224 as $p)
                                         <li class="text-white">{{ $p->nama_pasien }}&nbsp;&nbsp;&nbsp;{{ $p->tgm }}&nbsp;/&nbsp;{{ $p->penanggungjawab }}</li>    
                                     @endforeach
                                 </ul>
@@ -62,8 +64,11 @@
                     </a>
             @endforeach
                 </div>
-                
-                <div class="col-lg-2 mb-30">
+
+                <div class="col-lg-2">
+
+                </div>
+        <div class="col-lg-2 mb-30">
             @foreach ($kamar86 as $k86)
                     <a href="#" data-toggle="modal" data-target="#ChoiceModal86">
                 @if ($k86->hasil > 0)
@@ -108,11 +113,11 @@
                     </a>
             @endforeach
                 </div>
-                
-                <div class="col-lg-1">
+
+                <div class="col-lg-2">
 
                 </div>
-                <div class="col-lg-2 mb-30">
+        <div class="col-lg-2 mb-30">
             @foreach ($kamar87 as $k87)
                     <a href="#" data-toggle="modal" data-target="#ChoiceModal87">
                 @if ($k87->hasil > 0)
@@ -158,10 +163,10 @@
             @endforeach
                 </div>
                 
-                <div class="col-lg-1">
+            </div>
 
-                </div>
-                <div class="col-lg-2 mb-30">
+            <div class="hk-row">
+        <div class="col-lg-2 mb-30">
             @foreach ($kamar88 as $k88)
                     <a href="#" data-toggle="modal" data-target="#ChoiceModal88">
                 @if ($k88->hasil > 0)
@@ -206,40 +211,41 @@
                     </a>
             @endforeach
                 </div>
-                <div class="col-lg-2 mb-30">
-            @foreach ($kamar89 as $k89)
-                    <a href="#" data-toggle="modal" data-target="#ChoiceModal89">
-                @if ($k89->hasil > 0)
+
+        <div class="col-lg-2 mb-30">
+            @foreach ($kamar91 as $k91)
+                    <a href="#" data-toggle="modal" data-target="#ChoiceModal91">
+                @if ($k91->hasil > 0)
                     <div id="icu1" class="card bg-primary">
-                    <div class="card-header text-white">AZALEA 204-1</div>
-                @elseif ($bk89> 0)
+                    <div class="card-header text-white">AZALEA 202-2</div>
+                @elseif ($bk91> 0)
                     <div id="icu1" class="card bg-warning">
-                            <div class="card-header text-white">AZALEA 204-1</div>
+                            <div class="card-header text-white">AZALEA 202-2</div>
                 @else
                     <div id="icu1" class="card bg-light">
-                    <div class="card-header ">AZALEA 204-1</div>
+                    <div class="card-header ">AZALEA 202-2</div>
                 @endif
 
                         <div class="card-body">
-                            @foreach ($isi89 as $i89)
-                            <h5 class="card-title text-center"><i class="material-icons">single_bed</i>{{ $i89->kapasitas }}</h5>
+                            @foreach ($isi91 as $i91)
+                            <h5 class="card-title text-center"><i class="material-icons">single_bed</i>{{ $i91->kapasitas }}</h5>
                             
-                            @if ($i89->kapasitas == 1)
-                                @if ($i89->booked == 0 && $i89->bkg == 0)
+                            @if ($i91->kapasitas == 1)
+                                @if ($i91->booked == 0 && $i91->bkg == 0)
                                     <p class="card-text">Ruangan Tersedia</p>
                                 @else
                                     <ul>
-                                        @foreach ($pn89 as $p)
+                                        @foreach ($pn91 as $p)
                                             <li class="text-white">{{ $p->nama_pasien }}&nbsp;&nbsp;&nbsp;{{ $p->tgm }}&nbsp;/&nbsp;{{ $p->penanggungjawab }}</li>    
                                         @endforeach
                                     </ul>
                                 @endif
                             @else
-                                @if ($i89->booked == 0 && $i89->bkg == 0)
+                                @if ($i91->booked == 0 && $i91->bkg == 0)
                                     <p class="card-text">Ruangan Tersedia</p>
                                 @else
                                 <ul>
-                                    @foreach ($pn89 as $p)
+                                    @foreach ($pn91 as $p)
                                         <li class="text-white">{{ $p->nama_pasien }}&nbsp;&nbsp;&nbsp;{{ $p->tgm }}&nbsp;/&nbsp;{{ $p->penanggungjawab }}</li>    
                                     @endforeach
                                 </ul>
@@ -251,9 +257,55 @@
                     </a>
             @endforeach
                 </div>
-                
-            </div>
-            <div class="hk-row">
+
+                <div class="col-lg-4">
+
+                </div>
+        <div class="col-lg-2 mb-30">
+            @foreach ($kamar85 as $k85)
+                    <a href="#" data-toggle="modal" data-target="#ChoiceModal85">
+                @if ($k85->hasil > 0)
+                    <div id="icu1" class="card bg-primary">
+                    <div class="card-header text-white">AZALEA 205-1</div>
+                @elseif ($bk85 > 0)
+                    <div id="icu1" class="card bg-warning">
+                            <div class="card-header text-white">AZALEA 205-1</div>
+                @else
+                    <div id="icu1" class="card bg-light">
+                    <div class="card-header ">AZALEA 205-1</div>
+                @endif
+
+                        <div class="card-body">
+                            @foreach ($isi85 as $i85)
+                            <h5 class="card-title text-center"><i class="material-icons">single_bed</i>{{ $i85->kapasitas }}</h5>
+                            
+                            @if ($i85->kapasitas == 1)
+                                @if ($i85->booked == 0 && $i85->bkg == 0)
+                                    <p class="card-text">Ruangan Tersedia</p>
+                                @else
+                                    <ul>
+                                        @foreach ($pn85 as $p)
+                                            <li class="text-white">{{ $p->nama_pasien }}&nbsp;&nbsp;&nbsp;{{ $p->tgm }}&nbsp;/&nbsp;{{ $p->penanggungjawab }}</li>    
+                                        @endforeach
+                                    </ul>
+                                @endif
+                            @else
+                                @if ($i85->booked == 0 && $i85->bkg == 0)
+                                    <p class="card-text">Ruangan Tersedia</p>
+                                @else
+                                <ul>
+                                    @foreach ($pn85 as $p)
+                                        <li class="text-white">{{ $p->nama_pasien }}&nbsp;&nbsp;&nbsp;{{ $p->tgm }}&nbsp;/&nbsp;{{ $p->penanggungjawab }}</li>    
+                                    @endforeach
+                                </ul>
+                                @endif
+                            @endif
+                        @endforeach
+                        </div>
+                    </div>
+                    </a>
+            @endforeach
+                </div>
 
                 <div class="col-lg-2 mb-30">
             @foreach ($kamar90 as $k90)
@@ -300,44 +352,90 @@
                     </a>
             @endforeach
                 </div>
-               
-                <div class="col-lg-6">
-
-                </div>
-                <div class="col-lg-2 mb-30">
-            @foreach ($kamar91 as $k91)
-                    <a href="#" data-toggle="modal" data-target="#ChoiceModal91">
-                @if ($k91->hasil > 0)
+                        
+                
+            </div>
+            <div class="hk-row">
+        <div class="col-lg-2 mb-30">
+            @foreach ($kamar95 as $k95)
+                    <a href="#" data-toggle="modal" data-target="#ChoiceModal95">
+                @if ($k95->hasil > 0)
                     <div id="icu1" class="card bg-primary">
-                    <div class="card-header text-white">AZALEA 202-2</div>
-                @elseif ($bk91> 0)
+                    <div class="card-header text-white">AZALEA 206-1</div>
+                @elseif ($bk95> 0)
                     <div id="icu1" class="card bg-warning">
-                            <div class="card-header text-white">AZALEA 202-2</div>
+                            <div class="card-header text-white">AZALEA 206-1</div>
                 @else
                     <div id="icu1" class="card bg-light">
-                    <div class="card-header ">AZALEA 202-2</div>
+                    <div class="card-header ">AZALEA 206-1</div>
                 @endif
 
                         <div class="card-body">
-                            @foreach ($isi91 as $i91)
-                            <h5 class="card-title text-center"><i class="material-icons">single_bed</i>{{ $i91->kapasitas }}</h5>
+                            @foreach ($isi95 as $i95)
+                            <h5 class="card-title text-center"><i class="material-icons">single_bed</i>{{ $i95->kapasitas }}</h5>
                             
-                            @if ($i91->kapasitas == 1)
-                                @if ($i91->booked == 0 && $i91->bkg == 0)
+                            @if ($i95->kapasitas == 1)
+                                @if ($i95->booked == 0 && $i95->bkg == 0)
                                     <p class="card-text">Ruangan Tersedia</p>
                                 @else
                                     <ul>
-                                        @foreach ($pn91 as $p)
+                                        @foreach ($pn95 as $p)
                                             <li class="text-white">{{ $p->nama_pasien }}&nbsp;&nbsp;&nbsp;{{ $p->tgm }}&nbsp;/&nbsp;{{ $p->penanggungjawab }}</li>    
                                         @endforeach
                                     </ul>
                                 @endif
                             @else
-                                @if ($i91->booked == 0 && $i91->bkg == 0)
+                                @if ($i95->booked == 0 && $i95->bkg == 0)
                                     <p class="card-text">Ruangan Tersedia</p>
                                 @else
                                 <ul>
-                                    @foreach ($pn91 as $p)
+                                    @foreach ($pn95 as $p)
+                                        <li class="text-white">{{ $p->nama_pasien }}&nbsp;&nbsp;&nbsp;{{ $p->tgm }}&nbsp;/&nbsp;{{ $p->penanggungjawab }}</li>    
+                                    @endforeach
+                                </ul>
+                                @endif
+                            @endif
+                        @endforeach
+                        </div>
+                    </div>
+                    </a>
+            @endforeach
+                </div>
+                
+                <div class="col-lg-2 mb-30">
+            @foreach ($kamar96 as $k96)
+                    <a href="#" data-toggle="modal" data-target="#ChoiceModal96">
+                @if ($k96->hasil > 0)
+                    <div id="icu1" class="card bg-primary">
+                    <div class="card-header text-white">AZALEA 206-2</div>
+                @elseif ($bk96> 0)
+                    <div id="icu1" class="card bg-warning">
+                            <div class="card-header text-white">AZALEA 206-2</div>
+                @else
+                    <div id="icu1" class="card bg-light">
+                    <div class="card-header ">AZALEA 206-2</div>
+                @endif
+
+                        <div class="card-body">
+                            @foreach ($isi96 as $i96)
+                            <h5 class="card-title text-center"><i class="material-icons">single_bed</i>{{ $i96->kapasitas }}</h5>
+                            
+                            @if ($i96->kapasitas == 1)
+                                @if ($i96->booked == 0 && $i96->bkg == 0)
+                                    <p class="card-text">Ruangan Tersedia</p>
+                                @else
+                                    <ul>
+                                        @foreach ($pn96 as $p)
+                                            <li class="text-white">{{ $p->nama_pasien }}&nbsp;&nbsp;&nbsp;{{ $p->tgm }}&nbsp;/&nbsp;{{ $p->penanggungjawab }}</li>    
+                                        @endforeach
+                                    </ul>
+                                @endif
+                            @else
+                                @if ($i96->booked == 0 && $i96->bkg == 0)
+                                    <p class="card-text">Ruangan Tersedia</p>
+                                @else
+                                <ul>
+                                    @foreach ($pn96 as $p)
                                         <li class="text-white">{{ $p->nama_pasien }}&nbsp;&nbsp;&nbsp;{{ $p->tgm }}&nbsp;/&nbsp;{{ $p->penanggungjawab }}</li>    
                                     @endforeach
                                 </ul>
@@ -350,54 +448,9 @@
             @endforeach
                 </div>
         
-                <div class="col-lg-2 mb-30">
-            @foreach ($kamar92 as $k92)
-                    <a href="#" data-toggle="modal" data-target="#ChoiceModal92">
-                @if ($k92->hasil > 0)
-                    <div id="icu1" class="card bg-primary">
-                    <div class="card-header text-white">AZALEA 204-2</div>
-                @elseif ($bk92> 0)
-                    <div id="icu1" class="card bg-warning">
-                            <div class="card-header text-white">AZALEA 204-2</div>
-                @else
-                    <div id="icu1" class="card bg-light">
-                    <div class="card-header ">AZALEA 204-2</div>
-                @endif
-
-                        <div class="card-body">
-                            @foreach ($isi92 as $i92)
-                            <h5 class="card-title text-center"><i class="material-icons">single_bed</i>{{ $i92->kapasitas }}</h5>
-                            
-                            @if ($i92->kapasitas == 1)
-                                @if ($i92->booked == 0 && $i92->bkg == 0)
-                                    <p class="card-text">Ruangan Tersedia</p>
-                                @else
-                                    <ul>
-                                        @foreach ($pn92 as $p)
-                                            <li class="text-white">{{ $p->nama_pasien }}&nbsp;&nbsp;&nbsp;{{ $p->tgm }}&nbsp;/&nbsp;{{ $p->penanggungjawab }}</li>    
-                                        @endforeach
-                                    </ul>
-                                @endif
-                            @else
-                                @if ($i92->booked == 0 && $i92->bkg == 0)
-                                    <p class="card-text">Ruangan Tersedia</p>
-                                @else
-                                <ul>
-                                    @foreach ($pn92 as $p)
-                                        <li class="text-white">{{ $p->nama_pasien }}&nbsp;&nbsp;&nbsp;{{ $p->tgm }}&nbsp;/&nbsp;{{ $p->penanggungjawab }}</li>    
-                                    @endforeach
-                                </ul>
-                                @endif
-                            @endif
-                        @endforeach
+                        <div class="col-lg-4">
+        
                         </div>
-                    </div>
-                    </a>
-            @endforeach
-                </div>
-            
-            </div>
-            <div class="hk-row">
 
                 <div class="col-lg-2 mb-30">
             @foreach ($kamar93 as $k93)
@@ -490,104 +543,103 @@
                     </a>
             @endforeach
                 </div>
-                
-                <div class="col-lg-4">
-
-                </div>
-                <div class="col-lg-2 mb-30">
-            @foreach ($kamar95 as $k95)
-                    <a href="#" data-toggle="modal" data-target="#ChoiceModal95">
-                @if ($k95->hasil > 0)
-                    <div id="icu1" class="card bg-primary">
-                    <div class="card-header text-white">AZALEA 206-1</div>
-                @elseif ($bk95> 0)
-                    <div id="icu1" class="card bg-warning">
-                            <div class="card-header text-white">AZALEA 206-1</div>
-                @else
-                    <div id="icu1" class="card bg-light">
-                    <div class="card-header ">AZALEA 206-1</div>
-                @endif
-
-                        <div class="card-body">
-                            @foreach ($isi95 as $i95)
-                            <h5 class="card-title text-center"><i class="material-icons">single_bed</i>{{ $i95->kapasitas }}</h5>
-                            
-                            @if ($i95->kapasitas == 1)
-                                @if ($i95->booked == 0 && $i95->bkg == 0)
-                                    <p class="card-text">Ruangan Tersedia</p>
-                                @else
-                                    <ul>
-                                        @foreach ($pn95 as $p)
-                                            <li class="text-white">{{ $p->nama_pasien }}&nbsp;&nbsp;&nbsp;{{ $p->tgm }}&nbsp;/&nbsp;{{ $p->penanggungjawab }}</li>    
-                                        @endforeach
-                                    </ul>
-                                @endif
-                            @else
-                                @if ($i95->booked == 0 && $i95->bkg == 0)
-                                    <p class="card-text">Ruangan Tersedia</p>
-                                @else
-                                <ul>
-                                    @foreach ($pn95 as $p)
-                                        <li class="text-white">{{ $p->nama_pasien }}&nbsp;&nbsp;&nbsp;{{ $p->tgm }}&nbsp;/&nbsp;{{ $p->penanggungjawab }}</li>    
-                                    @endforeach
-                                </ul>
-                                @endif
-                            @endif
-                        @endforeach
-                        </div>
-                    </div>
-                    </a>
-            @endforeach
-                </div>
-                
-                <div class="col-lg-2 mb-30">
-            @foreach ($kamar96 as $k96)
-                    <a href="#" data-toggle="modal" data-target="#ChoiceModal96">
-                @if ($k96->hasil > 0)
-                    <div id="icu1" class="card bg-primary">
-                    <div class="card-header text-white">AZALEA 206-2</div>
-                @elseif ($bk96> 0)
-                    <div id="icu1" class="card bg-warning">
-                            <div class="card-header text-white">AZALEA 206-2</div>
-                @else
-                    <div id="icu1" class="card bg-light">
-                    <div class="card-header ">AZALEA 206-2</div>
-                @endif
-
-                        <div class="card-body">
-                            @foreach ($isi96 as $i96)
-                            <h5 class="card-title text-center"><i class="material-icons">single_bed</i>{{ $i96->kapasitas }}</h5>
-                            
-                            @if ($i96->kapasitas == 1)
-                                @if ($i96->booked == 0 && $i96->bkg == 0)
-                                    <p class="card-text">Ruangan Tersedia</p>
-                                @else
-                                    <ul>
-                                        @foreach ($pn96 as $p)
-                                            <li class="text-white">{{ $p->nama_pasien }}&nbsp;&nbsp;&nbsp;{{ $p->tgm }}&nbsp;/&nbsp;{{ $p->penanggungjawab }}</li>    
-                                        @endforeach
-                                    </ul>
-                                @endif
-                            @else
-                                @if ($i96->booked == 0 && $i96->bkg == 0)
-                                    <p class="card-text">Ruangan Tersedia</p>
-                                @else
-                                <ul>
-                                    @foreach ($pn96 as $p)
-                                        <li class="text-white">{{ $p->nama_pasien }}&nbsp;&nbsp;&nbsp;{{ $p->tgm }}&nbsp;/&nbsp;{{ $p->penanggungjawab }}</li>    
-                                    @endforeach
-                                </ul>
-                                @endif
-                            @endif
-                        @endforeach
-                        </div>
-                    </div>
-                    </a>
-            @endforeach
-                </div>
 
             </div>
             <div class="hk-row">
+        <div class="col-lg-2 mb-30">
+            @foreach ($kamar99 as $k99)
+                    <a href="#" data-toggle="modal" data-target="#ChoiceModal99">
+                @if ($k99->hasil > 0)
+                    <div id="icu1" class="card bg-primary">
+                    <div class="card-header text-white">TANJUNG 208-1</div>
+                @elseif ($bk99> 0)
+                    <div id="icu1" class="card bg-warning">
+                            <div class="card-header text-white">TANJUNG 208-1</div>
+                @else
+                    <div id="icu1" class="card bg-light">
+                    <div class="card-header ">TANJUNG 208-1</div>
+                @endif
+
+                        <div class="card-body">
+                            @foreach ($isi99 as $i99)
+                            <h5 class="card-title text-center"><i class="material-icons">single_bed</i>{{ $i99->kapasitas }}</h5>
+                            
+                            @if ($i99->kapasitas == 1)
+                                @if ($i99->booked == 0 && $i99->bkg == 0)
+                                    <p class="card-text">Ruangan Tersedia</p>
+                                @else
+                                    <ul>
+                                        @foreach ($pn99 as $p)
+                                            <li class="text-white">{{ $p->nama_pasien }}&nbsp;&nbsp;&nbsp;{{ $p->tgm }}&nbsp;/&nbsp;{{ $p->penanggungjawab }}</li>    
+                                        @endforeach
+                                    </ul>
+                                @endif
+                            @else
+                                @if ($i99->booked == 0 && $i99->bkg == 0)
+                                    <p class="card-text">Ruangan Tersedia</p>
+                                @else
+                                <ul>
+                                    @foreach ($pn99 as $p)
+                                        <li class="text-white">{{ $p->nama_pasien }}&nbsp;&nbsp;&nbsp;{{ $p->tgm }}&nbsp;/&nbsp;{{ $p->penanggungjawab }}</li>    
+                                    @endforeach
+                                </ul>
+                                @endif
+                            @endif
+                        @endforeach
+                        </div>
+                    </div>
+                    </a>
+            @endforeach
+                </div>
+                
+                <div class="col-lg-2 mb-30">
+            @foreach ($kamar100 as $k100)
+                    <a href="#" data-toggle="modal" data-target="#ChoiceModal100">
+                @if ($k100->hasil > 0)
+                    <div id="icu1" class="card bg-primary">
+                    <div class="card-header text-white">TANJUNG 208-2</div>
+                @elseif ($bk100> 0)
+                    <div id="icu1" class="card bg-warning">
+                            <div class="card-header text-white">TANJUNG 208-2</div>
+                @else
+                    <div id="icu1" class="card bg-light">
+                    <div class="card-header ">TANJUNG 208-2</div>
+                @endif
+
+                        <div class="card-body">
+                            @foreach ($isi100 as $i100)
+                            <h5 class="card-title text-center"><i class="material-icons">single_bed</i>{{ $i100->kapasitas }}</h5>
+                            
+                            @if ($i100->kapasitas == 1)
+                                @if ($i100->booked == 0 && $i100->bkg == 0)
+                                    <p class="card-text">Ruangan Tersedia</p>
+                                @else
+                                    <ul>
+                                        @foreach ($pn100 as $p)
+                                            <li class="text-white">{{ $p->nama_pasien }}&nbsp;&nbsp;&nbsp;{{ $p->tgm }}&nbsp;/&nbsp;{{ $p->penanggungjawab }}</li>    
+                                        @endforeach
+                                    </ul>
+                                @endif
+                            @else
+                                @if ($i100->booked == 0 && $i100->bkg == 0)
+                                    <p class="card-text">Ruangan Tersedia</p>
+                                @else
+                                <ul>
+                                    @foreach ($pn100 as $p)
+                                        <li class="text-white">{{ $p->nama_pasien }}&nbsp;&nbsp;&nbsp;{{ $p->tgm }}&nbsp;/&nbsp;{{ $p->penanggungjawab }}</li>    
+                                    @endforeach
+                                </ul>
+                                @endif
+                            @endif
+                        @endforeach
+                        </div>
+                    </div>
+                    </a>
+            @endforeach
+                </div>
+                <div class="col-lg-4">
+
+                </div>
 
                 <div class="col-lg-2 mb-30">
             @foreach ($kamar97 as $k97)
@@ -680,105 +732,103 @@
                     </a>
             @endforeach
                 </div>
-                
-                <div class="col-lg-4">
-
-                </div>
-                <div class="col-lg-2 mb-30">
-            @foreach ($kamar99 as $k99)
-                    <a href="#" data-toggle="modal" data-target="#ChoiceModal99">
-                @if ($k99->hasil > 0)
-                    <div id="icu1" class="card bg-primary">
-                    <div class="card-header text-white">TANJUNG 208-1</div>
-                @elseif ($bk99> 0)
-                    <div id="icu1" class="card bg-warning">
-                            <div class="card-header text-white">TANJUNG 208-1</div>
-                @else
-                    <div id="icu1" class="card bg-light">
-                    <div class="card-header ">TANJUNG 208-1</div>
-                @endif
-
-                        <div class="card-body">
-                            @foreach ($isi99 as $i99)
-                            <h5 class="card-title text-center"><i class="material-icons">single_bed</i>{{ $i99->kapasitas }}</h5>
-                            
-                            @if ($i99->kapasitas == 1)
-                                @if ($i99->booked == 0 && $i99->bkg == 0)
-                                    <p class="card-text">Ruangan Tersedia</p>
-                                @else
-                                    <ul>
-                                        @foreach ($pn99 as $p)
-                                            <li class="text-white">{{ $p->nama_pasien }}&nbsp;&nbsp;&nbsp;{{ $p->tgm }}&nbsp;/&nbsp;{{ $p->penanggungjawab }}</li>    
-                                        @endforeach
-                                    </ul>
-                                @endif
-                            @else
-                                @if ($i99->booked == 0 && $i99->bkg == 0)
-                                    <p class="card-text">Ruangan Tersedia</p>
-                                @else
-                                <ul>
-                                    @foreach ($pn99 as $p)
-                                        <li class="text-white">{{ $p->nama_pasien }}&nbsp;&nbsp;&nbsp;{{ $p->tgm }}&nbsp;/&nbsp;{{ $p->penanggungjawab }}</li>    
-                                    @endforeach
-                                </ul>
-                                @endif
-                            @endif
-                        @endforeach
-                        </div>
-                    </div>
-                    </a>
-            @endforeach
-                </div>
-                
-                <div class="col-lg-2 mb-30">
-            @foreach ($kamar100 as $k100)
-                    <a href="#" data-toggle="modal" data-target="#ChoiceModal100">
-                @if ($k100->hasil > 0)
-                    <div id="icu1" class="card bg-primary">
-                    <div class="card-header text-white">TANJUNG 208-2</div>
-                @elseif ($bk100> 0)
-                    <div id="icu1" class="card bg-warning">
-                            <div class="card-header text-white">TANJUNG 208-2</div>
-                @else
-                    <div id="icu1" class="card bg-light">
-                    <div class="card-header ">TANJUNG 208-2</div>
-                @endif
-
-                        <div class="card-body">
-                            @foreach ($isi100 as $i100)
-                            <h5 class="card-title text-center"><i class="material-icons">single_bed</i>{{ $i100->kapasitas }}</h5>
-                            
-                            @if ($i100->kapasitas == 1)
-                                @if ($i100->booked == 0 && $i100->bkg == 0)
-                                    <p class="card-text">Ruangan Tersedia</p>
-                                @else
-                                    <ul>
-                                        @foreach ($pn100 as $p)
-                                            <li class="text-white">{{ $p->nama_pasien }}&nbsp;&nbsp;&nbsp;{{ $p->tgm }}&nbsp;/&nbsp;{{ $p->penanggungjawab }}</li>    
-                                        @endforeach
-                                    </ul>
-                                @endif
-                            @else
-                                @if ($i100->booked == 0 && $i100->bkg == 0)
-                                    <p class="card-text">Ruangan Tersedia</p>
-                                @else
-                                <ul>
-                                    @foreach ($pn100 as $p)
-                                        <li class="text-white">{{ $p->nama_pasien }}&nbsp;&nbsp;&nbsp;{{ $p->tgm }}&nbsp;/&nbsp;{{ $p->penanggungjawab }}</li>    
-                                    @endforeach
-                                </ul>
-                                @endif
-                            @endif
-                        @endforeach
-                        </div>
-                    </div>
-                    </a>
-            @endforeach
-                </div>
-                
 
             </div>
             <div class="hk-row">
+        <div class="col-lg-2 mb-30">
+            @foreach ($kamar103 as $k103)
+                    <a href="#" data-toggle="modal" data-target="#ChoiceModal103">
+                @if ($k103->hasil > 0)
+                    <div id="icu1" class="card bg-primary">
+                    <div class="card-header text-white">SERUNI 210-1</div>
+                @elseif ($bk103> 0)
+                    <div id="icu1" class="card bg-warning">
+                            <div class="card-header text-white">SERUNI 210-1</div>
+                @else
+                    <div id="icu1" class="card bg-light">
+                    <div class="card-header ">SERUNI 210-1</div>
+                @endif
+
+                        <div class="card-body">
+                            @foreach ($isi103 as $i103)
+                            <h5 class="card-title text-center"><i class="material-icons">single_bed</i>{{ $i103->kapasitas }}</h5>
+                            
+                            @if ($i103->kapasitas == 1)
+                                @if ($i103->booked == 0 && $i103->bkg == 0)
+                                    <p class="card-text">Ruangan Tersedia</p>
+                                @else
+                                    <ul>
+                                        @foreach ($pn103 as $p)
+                                            <li class="text-white">{{ $p->nama_pasien }}&nbsp;&nbsp;&nbsp;{{ $p->tgm }}&nbsp;/&nbsp;{{ $p->penanggungjawab }}</li>    
+                                        @endforeach
+                                    </ul>
+                                @endif
+                            @else
+                                @if ($i103->booked == 0 && $i103->bkg == 0)
+                                    <p class="card-text">Ruangan Tersedia</p>
+                                @else
+                                <ul>
+                                    @foreach ($pn103 as $p)
+                                        <li class="text-white">{{ $p->nama_pasien }}&nbsp;&nbsp;&nbsp;{{ $p->tgm }}&nbsp;/&nbsp;{{ $p->penanggungjawab }}</li>    
+                                    @endforeach
+                                </ul>
+                                @endif
+                            @endif
+                        @endforeach
+                        </div>
+                    </div>
+                    </a>
+            @endforeach
+                </div>
+                
+                <div class="col-lg-2 mb-30">
+            @foreach ($kamar104 as $k104)
+                    <a href="#" data-toggle="modal" data-target="#ChoiceModal104">
+                @if ($k104->hasil > 0)
+                    <div id="icu1" class="card bg-primary">
+                    <div class="card-header text-white">SERUNI 210-2</div>
+                @elseif ($bk104> 0)
+                    <div id="icu1" class="card bg-warning">
+                            <div class="card-header text-white">SERUNI 210-2</div>
+                @else
+                    <div id="icu1" class="card bg-light">
+                    <div class="card-header ">SERUNI 210-2</div>
+                @endif
+
+                        <div class="card-body">
+                            @foreach ($isi104 as $i104)
+                            <h5 class="card-title text-center"><i class="material-icons">single_bed</i>{{ $i104->kapasitas }}</h5>
+                            
+                            @if ($i104->kapasitas == 1)
+                                @if ($i104->booked == 0 && $i104->bkg == 0)
+                                    <p class="card-text">Ruangan Tersedia</p>
+                                @else
+                                    <ul>
+                                        @foreach ($pn104 as $p)
+                                            <li class="text-white">{{ $p->nama_pasien }}&nbsp;&nbsp;&nbsp;{{ $p->tgm }}&nbsp;/&nbsp;{{ $p->penanggungjawab }}</li>    
+                                        @endforeach
+                                    </ul>
+                                @endif
+                            @else
+                                @if ($i104->booked == 0 && $i104->bkg == 0)
+                                    <p class="card-text">Ruangan Tersedia</p>
+                                @else
+                                <ul>
+                                    @foreach ($pn104 as $p)
+                                        <li class="text-white">{{ $p->nama_pasien }}&nbsp;&nbsp;&nbsp;{{ $p->tgm }}&nbsp;/&nbsp;{{ $p->penanggungjawab }}</li>    
+                                    @endforeach
+                                </ul>
+                                @endif
+                            @endif
+                        @endforeach
+                        </div>
+                    </div>
+                    </a>
+            @endforeach
+                </div>
+                <div class="col-lg-4">
+
+                </div>
 
                 <div class="col-lg-2 mb-30">
             @foreach ($kamar101 as $k101)
@@ -871,202 +921,10 @@
                     </a>
             @endforeach
                 </div>
-                
-                <div class="col-lg-4">
-
-                </div>
-                <div class="col-lg-2 mb-30">
-            @foreach ($kamar103 as $k103)
-                    <a href="#" data-toggle="modal" data-target="#ChoiceModal103">
-                @if ($k103->hasil > 0)
-                    <div id="icu1" class="card bg-primary">
-                    <div class="card-header text-white">SERUNI 210-1</div>
-                @elseif ($bk103> 0)
-                    <div id="icu1" class="card bg-warning">
-                            <div class="card-header text-white">SERUNI 210-1</div>
-                @else
-                    <div id="icu1" class="card bg-light">
-                    <div class="card-header ">SERUNI 210-1</div>
-                @endif
-
-                        <div class="card-body">
-                            @foreach ($isi103 as $i103)
-                            <h5 class="card-title text-center"><i class="material-icons">single_bed</i>{{ $i103->kapasitas }}</h5>
-                            
-                            @if ($i103->kapasitas == 1)
-                                @if ($i103->booked == 0 && $i103->bkg == 0)
-                                    <p class="card-text">Ruangan Tersedia</p>
-                                @else
-                                    <ul>
-                                        @foreach ($pn103 as $p)
-                                            <li class="text-white">{{ $p->nama_pasien }}&nbsp;&nbsp;&nbsp;{{ $p->tgm }}&nbsp;/&nbsp;{{ $p->penanggungjawab }}</li>    
-                                        @endforeach
-                                    </ul>
-                                @endif
-                            @else
-                                @if ($i103->booked == 0 && $i103->bkg == 0)
-                                    <p class="card-text">Ruangan Tersedia</p>
-                                @else
-                                <ul>
-                                    @foreach ($pn103 as $p)
-                                        <li class="text-white">{{ $p->nama_pasien }}&nbsp;&nbsp;&nbsp;{{ $p->tgm }}&nbsp;/&nbsp;{{ $p->penanggungjawab }}</li>    
-                                    @endforeach
-                                </ul>
-                                @endif
-                            @endif
-                        @endforeach
-                        </div>
-                    </div>
-                    </a>
-            @endforeach
-                </div>
-                
-                <div class="col-lg-2 mb-30">
-            @foreach ($kamar104 as $k104)
-                    <a href="#" data-toggle="modal" data-target="#ChoiceModal104">
-                @if ($k104->hasil > 0)
-                    <div id="icu1" class="card bg-primary">
-                    <div class="card-header text-white">SERUNI 210-2</div>
-                @elseif ($bk104> 0)
-                    <div id="icu1" class="card bg-warning">
-                            <div class="card-header text-white">SERUNI 210-2</div>
-                @else
-                    <div id="icu1" class="card bg-light">
-                    <div class="card-header ">SERUNI 210-2</div>
-                @endif
-
-                        <div class="card-body">
-                            @foreach ($isi104 as $i104)
-                            <h5 class="card-title text-center"><i class="material-icons">single_bed</i>{{ $i104->kapasitas }}</h5>
-                            
-                            @if ($i104->kapasitas == 1)
-                                @if ($i104->booked == 0 && $i104->bkg == 0)
-                                    <p class="card-text">Ruangan Tersedia</p>
-                                @else
-                                    <ul>
-                                        @foreach ($pn104 as $p)
-                                            <li class="text-white">{{ $p->nama_pasien }}&nbsp;&nbsp;&nbsp;{{ $p->tgm }}&nbsp;/&nbsp;{{ $p->penanggungjawab }}</li>    
-                                        @endforeach
-                                    </ul>
-                                @endif
-                            @else
-                                @if ($i104->booked == 0 && $i104->bkg == 0)
-                                    <p class="card-text">Ruangan Tersedia</p>
-                                @else
-                                <ul>
-                                    @foreach ($pn104 as $p)
-                                        <li class="text-white">{{ $p->nama_pasien }}&nbsp;&nbsp;&nbsp;{{ $p->tgm }}&nbsp;/&nbsp;{{ $p->penanggungjawab }}</li>    
-                                    @endforeach
-                                </ul>
-                                @endif
-                            @endif
-                        @endforeach
-                        </div>
-                    </div>
-                    </a>
-            @endforeach
-                </div>
-                
 
             </div>
             <div class="hk-row">
-
-                <div class="col-lg-2 mb-30">
-            @foreach ($kamar105 as $k105)
-                    <a href="#" data-toggle="modal" data-target="#ChoiceModal105">
-                @if ($k105->hasil > 0)
-                    <div id="icu1" class="card bg-primary">
-                    <div class="card-header text-white">SERUNI 211-3</div>
-                @elseif ($bk105> 0)
-                    <div id="icu1" class="card bg-warning">
-                            <div class="card-header text-white">SERUNI 211-3</div>
-                @else
-                    <div id="icu1" class="card bg-light">
-                    <div class="card-header ">SERUNI 211-3</div>
-                @endif
-
-                        <div class="card-body">
-                            @foreach ($isi105 as $i105)
-                            <h5 class="card-title text-center"><i class="material-icons">single_bed</i>{{ $i105->kapasitas }}</h5>
-                            
-                            @if ($i105->kapasitas == 1)
-                                @if ($i105->booked == 0 && $i105->bkg == 0)
-                                    <p class="card-text">Ruangan Tersedia</p>
-                                @else
-                                    <ul>
-                                        @foreach ($pn105 as $p)
-                                            <li class="text-white">{{ $p->nama_pasien }}&nbsp;&nbsp;&nbsp;{{ $p->tgm }}&nbsp;/&nbsp;{{ $p->penanggungjawab }}</li>    
-                                        @endforeach
-                                    </ul>
-                                @endif
-                            @else
-                                @if ($i105->booked == 0 && $i105->bkg == 0)
-                                    <p class="card-text">Ruangan Tersedia</p>
-                                @else
-                                <ul>
-                                    @foreach ($pn105 as $p)
-                                        <li class="text-white">{{ $p->nama_pasien }}&nbsp;&nbsp;&nbsp;{{ $p->tgm }}&nbsp;/&nbsp;{{ $p->penanggungjawab }}</li>    
-                                    @endforeach
-                                </ul>
-                                @endif
-                            @endif
-                        @endforeach
-                        </div>
-                    </div>
-                    </a>
-            @endforeach
-                </div>
-                
-                <div class="col-lg-2 mb-30">
-            @foreach ($kamar106 as $k106)
-                    <a href="#" data-toggle="modal" data-target="#ChoiceModal106">
-                @if ($k106->hasil > 0)
-                    <div id="icu1" class="card bg-primary">
-                    <div class="card-header text-white">SERUNI 211-4</div>
-                @elseif ($bk106> 0)
-                    <div id="icu1" class="card bg-warning">
-                            <div class="card-header text-white">SERUNI 211-4</div>
-                @else
-                    <div id="icu1" class="card bg-light">
-                    <div class="card-header ">SERUNI 211-4</div>
-                @endif
-
-                        <div class="card-body">
-                            @foreach ($isi106 as $i106)
-                            <h5 class="card-title text-center"><i class="material-icons">single_bed</i>{{ $i106->kapasitas }}</h5>
-                            
-                            @if ($i106->kapasitas == 1)
-                                @if ($i106->booked == 0 && $i106->bkg == 0)
-                                    <p class="card-text">Ruangan Tersedia</p>
-                                @else
-                                    <ul>
-                                        @foreach ($pn106 as $p)
-                                            <li class="text-white">{{ $p->nama_pasien }}&nbsp;&nbsp;&nbsp;{{ $p->tgm }}&nbsp;/&nbsp;{{ $p->penanggungjawab }}</li>    
-                                        @endforeach
-                                    </ul>
-                                @endif
-                            @else
-                                @if ($i106->booked == 0 && $i106->bkg == 0)
-                                    <p class="card-text">Ruangan Tersedia</p>
-                                @else
-                                <ul>
-                                    @foreach ($pn106 as $p)
-                                        <li class="text-white">{{ $p->nama_pasien }}&nbsp;&nbsp;&nbsp;{{ $p->tgm }}&nbsp;/&nbsp;{{ $p->penanggungjawab }}</li>    
-                                    @endforeach
-                                </ul>
-                                @endif
-                            @endif
-                        @endforeach
-                        </div>
-                    </div>
-                    </a>
-            @endforeach
-                </div>
-                
-                <div class="col-lg-2">
-
-                </div>
-                <div class="col-lg-2 mb-30">
+        <div class="col-lg-2 mb-30">
             @foreach ($kamar107 as $k107)
                     <a href="#" data-toggle="modal" data-target="#ChoiceModal107">
                 @if ($k107->hasil > 0)
@@ -1203,6 +1061,101 @@
                     </a>
             @endforeach
                 </div>
+                <div class="col-lg-2">
+
+                </div>
+
+                <div class="col-lg-2 mb-30">
+            @foreach ($kamar105 as $k105)
+                    <a href="#" data-toggle="modal" data-target="#ChoiceModal105">
+                @if ($k105->hasil > 0)
+                    <div id="icu1" class="card bg-primary">
+                    <div class="card-header text-white">SERUNI 211-3</div>
+                @elseif ($bk105> 0)
+                    <div id="icu1" class="card bg-warning">
+                            <div class="card-header text-white">SERUNI 211-3</div>
+                @else
+                    <div id="icu1" class="card bg-light">
+                    <div class="card-header ">SERUNI 211-3</div>
+                @endif
+
+                        <div class="card-body">
+                            @foreach ($isi105 as $i105)
+                            <h5 class="card-title text-center"><i class="material-icons">single_bed</i>{{ $i105->kapasitas }}</h5>
+                            
+                            @if ($i105->kapasitas == 1)
+                                @if ($i105->booked == 0 && $i105->bkg == 0)
+                                    <p class="card-text">Ruangan Tersedia</p>
+                                @else
+                                    <ul>
+                                        @foreach ($pn105 as $p)
+                                            <li class="text-white">{{ $p->nama_pasien }}&nbsp;&nbsp;&nbsp;{{ $p->tgm }}&nbsp;/&nbsp;{{ $p->penanggungjawab }}</li>    
+                                        @endforeach
+                                    </ul>
+                                @endif
+                            @else
+                                @if ($i105->booked == 0 && $i105->bkg == 0)
+                                    <p class="card-text">Ruangan Tersedia</p>
+                                @else
+                                <ul>
+                                    @foreach ($pn105 as $p)
+                                        <li class="text-white">{{ $p->nama_pasien }}&nbsp;&nbsp;&nbsp;{{ $p->tgm }}&nbsp;/&nbsp;{{ $p->penanggungjawab }}</li>    
+                                    @endforeach
+                                </ul>
+                                @endif
+                            @endif
+                        @endforeach
+                        </div>
+                    </div>
+                    </a>
+            @endforeach
+                </div>
+                
+                <div class="col-lg-2 mb-30">
+            @foreach ($kamar106 as $k106)
+                    <a href="#" data-toggle="modal" data-target="#ChoiceModal106">
+                @if ($k106->hasil > 0)
+                    <div id="icu1" class="card bg-primary">
+                    <div class="card-header text-white">SERUNI 211-4</div>
+                @elseif ($bk106> 0)
+                    <div id="icu1" class="card bg-warning">
+                            <div class="card-header text-white">SERUNI 211-4</div>
+                @else
+                    <div id="icu1" class="card bg-light">
+                    <div class="card-header ">SERUNI 211-4</div>
+                @endif
+
+                        <div class="card-body">
+                            @foreach ($isi106 as $i106)
+                            <h5 class="card-title text-center"><i class="material-icons">single_bed</i>{{ $i106->kapasitas }}</h5>
+                            
+                            @if ($i106->kapasitas == 1)
+                                @if ($i106->booked == 0 && $i106->bkg == 0)
+                                    <p class="card-text">Ruangan Tersedia</p>
+                                @else
+                                    <ul>
+                                        @foreach ($pn106 as $p)
+                                            <li class="text-white">{{ $p->nama_pasien }}&nbsp;&nbsp;&nbsp;{{ $p->tgm }}&nbsp;/&nbsp;{{ $p->penanggungjawab }}</li>    
+                                        @endforeach
+                                    </ul>
+                                @endif
+                            @else
+                                @if ($i106->booked == 0 && $i106->bkg == 0)
+                                    <p class="card-text">Ruangan Tersedia</p>
+                                @else
+                                <ul>
+                                    @foreach ($pn106 as $p)
+                                        <li class="text-white">{{ $p->nama_pasien }}&nbsp;&nbsp;&nbsp;{{ $p->tgm }}&nbsp;/&nbsp;{{ $p->penanggungjawab }}</li>    
+                                    @endforeach
+                                </ul>
+                                @endif
+                            @endif
+                        @endforeach
+                        </div>
+                    </div>
+                    </a>
+            @endforeach
+                </div>
                 
 
             </div>
@@ -1210,6 +1163,58 @@
      </div>
 </div>
 
+{{-- Modal Pilihan --}}
+<div class="modal fade" id="ChoiceModal224" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cModalTitle">Entry Data </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @foreach ($isi224 as $i224)
+                    @if ($i224->booked == $i224->kapasitas)
+                        <form action="">
+                            <input type="submit" class="btn btn-outline-primary btn-lg btn-block mb-2" value="Entry Pasien Masuk Rawat Inap" disabled>
+                        </form>
+                    @else
+                        <a href="{{ url('/booking-mrs/224/lantai2rba1') }}" class="btn btn-outline-primary btn-lg btn-block">
+                            Entry Pasien Masuk Rawat Inap
+                        </a>
+                    @endif
+                @endforeach
+                @foreach ($isi224 as $i224)
+                @if ($i224->booked > 0)
+                    <button type="button" class="btn btn-outline-primary btn-lg btn-block" data-toggle="modal" id="keluar" data-target="#KeluarForm" disabled>
+                        Entry Pasien Reservasi
+                    </button>
+                @else
+                    <a href="{{ url('/booking-page/224/lantai2rba1') }}" class="btn btn-outline-primary btn-lg btn-block" >
+                        Entry Pasien Reservasi
+                    </a>
+                @endif
+                @endforeach
+                @foreach ($isi224 as $i224)
+                    @if ($i224->booked == 0)
+                        <button type="button" class="btn btn-outline-primary btn-lg btn-block" data-toggle="modal" id="keluar" data-target="#KeluarForm" disabled>
+                            Pasien Keluar Rawat Inap
+                        </button>
+                    @else
+                        <a href="{{ url('/booking-keluar/224/lantai2rba1') }}" class="btn btn-outline-primary btn-lg btn-block" >
+                            Pasien Keluar Rawat Inap
+                        </a>
+                    @endif
+                @endforeach
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                
+            </div>
+        </div>
+    </div>
+</div>
 
 {{-- Modal Pilihan --}}
 <div class="modal fade" id="ChoiceModal85" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
