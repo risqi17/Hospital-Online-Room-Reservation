@@ -39,14 +39,14 @@
                             <div class="form-group row">
                                 <label for="inputPassword3" class="col-sm-2 col-form-label">Nama Pasien</label>
                                 <div class="col-sm-6">
-                                    <input type="text" class="form-control" id="bookusr" name="nama">
+                                    <input type="text" class="form-control" id="bookusr" name="nama" required>
                                 </div>
                             </div>
                             
                             <div class="form-group row">
                                 <label for="inputPassword3" class="col-sm-2 col-form-label">Penanggung</label>
                                 <div class="col-sm-5">
-                                    <input type="text" class="form-control" id="bookpng" name="penanggung">
+                                    <input type="text" class="form-control" id="bookpng" name="penanggung" required>
                                 </div>
                             </div>
 

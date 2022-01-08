@@ -111,13 +111,7 @@
                             <div class="d-flex align-items-center card-action-wrap">
                                 <div class="inline-block dropdown">
                                     <a class="dropdown-toggle no-caret" data-toggle="dropdown" href="#" aria-expanded="false" role="button"><i class="ion ion-ios-more"></i></a>
-                                    <div class="dropdown-menu dropdown-menu-right">
-                                        <a class="dropdown-item" href="#">Action</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <a class="dropdown-item" href="#">Something else here</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#">Separated link</a>
-                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -147,30 +141,16 @@
                              <div class="d-flex align-items-center card-action-wrap">
                                  <div class="inline-block dropdown">
                                      <a class="dropdown-toggle no-caret" data-toggle="dropdown" href="#" aria-expanded="false" role="button"><i class="ion ion-ios-more"></i></a>
-                                     <div class="dropdown-menu dropdown-menu-right">
-                                         <a class="dropdown-item" href="#">Action</a>
-                                         <a class="dropdown-item" href="#">Another action</a>
-                                         <a class="dropdown-item" href="#">Something else here</a>
-                                         <div class="dropdown-divider"></div>
-                                         <a class="dropdown-item" href="#">Separated link</a>
-                                     </div>
+                                     
                                  </div>
                              </div>
                          </div>
                          <div class="card-body">
                              <div class="hk-legend-wrap mb-20">
                                  <div class="hk-legend">
-                                     <span class="d-10 bg-indigo-light-2 rounded-circle d-inline-block"></span><span>A1</span>
+                                     <span class="d-10 bg-indigo-light-2 rounded-circle d-inline-block"></span>
                                  </div>
-                                 <div class="hk-legend">
-                                     <span class="d-10 bg-primary rounded-circle d-inline-block"></span><span>A2</span>
-                                 </div>
-                                 <div class="hk-legend">
-                                     <span class="d-10 bg-indigo-light-1 rounded-circle d-inline-block"></span><span>A3</span>
-                                 </div>
-                                 <div class="hk-legend">
-                                     <span class="d-10 bg-indigo-light-3 rounded-circle d-inline-block"></span><span>A4</span>
-                                 </div>
+                                 
                              </div>
                              <div id="e_chart_11" class="echart" style="height:291px;"></div>
                          </div>
@@ -183,13 +163,7 @@
                              <div class="d-flex align-items-center card-action-wrap">
                                  <div class="inline-block dropdown">
                                      <a class="dropdown-toggle no-caret" data-toggle="dropdown" href="#" aria-expanded="false" role="button"><i class="ion ion-ios-more"></i></a>
-                                     <div class="dropdown-menu dropdown-menu-right">
-                                         <a class="dropdown-item" href="#">Action</a>
-                                         <a class="dropdown-item" href="#">Another action</a>
-                                         <a class="dropdown-item" href="#">Something else here</a>
-                                         <div class="dropdown-divider"></div>
-                                         <a class="dropdown-item" href="#">Separated link</a>
-                                     </div>
+                                    
                                  </div>
                              </div>
                          </div>
