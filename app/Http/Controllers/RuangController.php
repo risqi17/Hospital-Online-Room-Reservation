@@ -10,6 +10,18 @@ use Illuminate\Support\Facades\File;
 class RuangController extends Controller
 {
     public function icu(){
+        $data['jml_kamar'] = DB::select('SELECT COUNT(*) AS hasil FROM kamar WHERE group_kamar="ICU"');
+        $data['dirawat'] = DB::select('SELECT COUNT(*) AS hasil FROM reservasi inner join kamar on kamar.id_kamar = reservasi.id_kamar where reservasi.keterangan = "terisi" and kamar.group_kamar = "ICU"');
+        $data['booking'] = DB::select('SELECT COUNT(*) AS hasil FROM reservasi inner join kamar on kamar.id_kamar = reservasi.id_kamar where reservasi.status_kamar = "Booking" and kamar.group_kamar = "ICU"');
+        $data['keluar'] = DB::select('SELECT COUNT(*) AS hasil FROM reservasi inner join kamar on kamar.id_kamar = reservasi.id_kamar where reservasi.status_kamar = "keluar" and kamar.group_kamar = "ICU"');
+
+        $data['png'] = DB::select('SELECT penanggungjawab, COUNT(penanggungjawab) AS hasil FROM reservasi WHERE status_kamar = "keluar" GROUP BY penanggungjawab');
+        $data['pakai'] = DB::select('SELECT (SELECT DISTINCT COUNT(id_kamar) FROM reservasi WHERE keterangan = "Terisi") AS Terpakai, ((SELECT COUNT(*) FROM kamar) - (SELECT DISTINCT COUNT(id_kamar) FROM reservasi WHERE keterangan = "Terisi")) AS tidak_terpakai');
+
+        $data['jml_ka'] = DB::select('SELECT COUNT(*) FROM kamar');
+        //Update Booking Status
+        DB::select('UPDATE reservasi SET keterangan = "Terisi", status_booking = "MRS", status_kamar = "masuk" WHERE DATE(tgl_masuk) = DATE(NOW()) AND status_booking = "Booking"');
+
         //kamar
         $data['kamar1'] = DB::select('SELECT count(*) AS hasil FROM reservasi WHERE id_kamar = 1 AND status_kamar = "masuk" AND status_booking = "MRS"');
         $data['kamar2'] = DB::select('SELECT count(*) AS hasil FROM reservasi WHERE id_kamar = 2 AND status_kamar = "masuk" AND status_booking = "MRS"');
@@ -117,6 +129,18 @@ class RuangController extends Controller
         return view('ruangan.icu', $data);
     }
     public function paviliun1(){
+        $data['jml_kamar'] = DB::select('SELECT COUNT(*) AS hasil FROM kamar WHERE group_kamar="PAVILIUN1"');
+        $data['dirawat'] = DB::select('SELECT COUNT(*) AS hasil FROM reservasi inner join kamar on kamar.id_kamar = reservasi.id_kamar where reservasi.keterangan = "terisi" and kamar.group_kamar = "PAVILIUN1"');
+        $data['booking'] = DB::select('SELECT COUNT(*) AS hasil FROM reservasi inner join kamar on kamar.id_kamar = reservasi.id_kamar where reservasi.status_kamar = "Booking" and kamar.group_kamar = "PAVILIUN1"');
+        $data['keluar'] = DB::select('SELECT COUNT(*) AS hasil FROM reservasi inner join kamar on kamar.id_kamar = reservasi.id_kamar where reservasi.status_kamar = "keluar" and kamar.group_kamar = "PAVILIUN1"');
+
+        $data['png'] = DB::select('SELECT penanggungjawab, COUNT(penanggungjawab) AS hasil FROM reservasi WHERE status_kamar = "keluar" GROUP BY penanggungjawab');
+        $data['pakai'] = DB::select('SELECT (SELECT DISTINCT COUNT(id_kamar) FROM reservasi WHERE keterangan = "Terisi") AS Terpakai, ((SELECT COUNT(*) FROM kamar) - (SELECT DISTINCT COUNT(id_kamar) FROM reservasi WHERE keterangan = "Terisi")) AS tidak_terpakai');
+
+        $data['jml_ka'] = DB::select('SELECT COUNT(*) FROM kamar');
+        //Update Booking Status
+        DB::select('UPDATE reservasi SET keterangan = "Terisi", status_booking = "MRS", status_kamar = "masuk" WHERE DATE(tgl_masuk) = DATE(NOW()) AND status_booking = "Booking"');
+
         //cekkamar
         $data['kamar195'] = DB::select('SELECT count(*) AS hasil FROM reservasi WHERE id_kamar = 195 AND status_kamar = "masuk" AND status_booking = "MRS"');
         $data['kamar196'] = DB::select('SELECT count(*) AS hasil FROM reservasi WHERE id_kamar = 196 AND status_kamar = "masuk" AND status_booking = "MRS"');
@@ -636,6 +660,17 @@ class RuangController extends Controller
     }
 
     public function paviliun2(){
+        $data['jml_kamar'] = DB::select('SELECT COUNT(*) AS hasil FROM kamar WHERE group_kamar="PAVILIUN2"');
+        $data['dirawat'] = DB::select('SELECT COUNT(*) AS hasil FROM reservasi inner join kamar on kamar.id_kamar = reservasi.id_kamar where reservasi.keterangan = "terisi" and kamar.group_kamar = "PAVILIUN2"');
+        $data['booking'] = DB::select('SELECT COUNT(*) AS hasil FROM reservasi inner join kamar on kamar.id_kamar = reservasi.id_kamar where reservasi.status_kamar = "Booking" and kamar.group_kamar = "PAVILIUN2"');
+        $data['keluar'] = DB::select('SELECT COUNT(*) AS hasil FROM reservasi inner join kamar on kamar.id_kamar = reservasi.id_kamar where reservasi.status_kamar = "keluar" and kamar.group_kamar = "PAVILIUN2"');
+
+        $data['png'] = DB::select('SELECT penanggungjawab, COUNT(penanggungjawab) AS hasil FROM reservasi WHERE status_kamar = "keluar" GROUP BY penanggungjawab');
+        $data['pakai'] = DB::select('SELECT (SELECT DISTINCT COUNT(id_kamar) FROM reservasi WHERE keterangan = "Terisi") AS Terpakai, ((SELECT COUNT(*) FROM kamar) - (SELECT DISTINCT COUNT(id_kamar) FROM reservasi WHERE keterangan = "Terisi")) AS tidak_terpakai');
+
+        $data['jml_ka'] = DB::select('SELECT COUNT(*) FROM kamar');
+        //Update Booking Status
+        DB::select('UPDATE reservasi SET keterangan = "Terisi", status_booking = "MRS", status_kamar = "masuk" WHERE DATE(tgl_masuk) = DATE(NOW()) AND status_booking = "Booking"');
         $data['kamar178'] = DB::select('SELECT count(*) AS hasil FROM reservasi WHERE id_kamar = 178 AND status_kamar = "masuk" AND status_booking = "MRS"');
         $data['kamar179'] = DB::select('SELECT count(*) AS hasil FROM reservasi WHERE id_kamar = 179 AND status_kamar = "masuk" AND status_booking = "MRS"');
         $data['kamar180'] = DB::select('SELECT count(*) AS hasil FROM reservasi WHERE id_kamar = 180 AND status_kamar = "masuk" AND status_booking = "MRS"');
@@ -1170,6 +1205,18 @@ class RuangController extends Controller
         return view('ruangan.paviliun2', $data);
     }
     public function paviliun3(){
+        $data['jml_kamar'] = DB::select('SELECT COUNT(*) AS hasil FROM kamar WHERE group_kamar="PAVILIUN3"');
+        $data['dirawat'] = DB::select('SELECT COUNT(*) AS hasil FROM reservasi inner join kamar on kamar.id_kamar = reservasi.id_kamar where reservasi.keterangan = "terisi" and kamar.group_kamar = "PAVILIUN3"');
+        $data['booking'] = DB::select('SELECT COUNT(*) AS hasil FROM reservasi inner join kamar on kamar.id_kamar = reservasi.id_kamar where reservasi.status_kamar = "Booking" and kamar.group_kamar = "PAVILIUN3"');
+        $data['keluar'] = DB::select('SELECT COUNT(*) AS hasil FROM reservasi inner join kamar on kamar.id_kamar = reservasi.id_kamar where reservasi.status_kamar = "keluar" and kamar.group_kamar = "PAVILIUN3"');
+
+        $data['png'] = DB::select('SELECT penanggungjawab, COUNT(penanggungjawab) AS hasil FROM reservasi WHERE status_kamar = "keluar" GROUP BY penanggungjawab');
+        $data['pakai'] = DB::select('SELECT (SELECT DISTINCT COUNT(id_kamar) FROM reservasi WHERE keterangan = "Terisi") AS Terpakai, ((SELECT COUNT(*) FROM kamar) - (SELECT DISTINCT COUNT(id_kamar) FROM reservasi WHERE keterangan = "Terisi")) AS tidak_terpakai');
+
+        $data['jml_ka'] = DB::select('SELECT COUNT(*) FROM kamar');
+        //Update Booking Status
+        DB::select('UPDATE reservasi SET keterangan = "Terisi", status_booking = "MRS", status_kamar = "masuk" WHERE DATE(tgl_masuk) = DATE(NOW()) AND status_booking = "Booking"');
+
          //cekkamar
          $data['kamar52'] = DB::select('SELECT count(*) AS hasil FROM reservasi WHERE id_kamar = 52 AND status_kamar = "masuk" AND status_booking = "MRS"');
          $data['kamar53'] = DB::select('SELECT count(*) AS hasil FROM reservasi WHERE id_kamar = 53 AND status_kamar = "masuk" AND status_booking = "MRS"');
@@ -1322,6 +1369,18 @@ class RuangController extends Controller
         return view('ruangan.paviliun3', $data);
     }
     public function lantai1pdp(){
+        $data['jml_kamar'] = DB::select('SELECT COUNT(*) AS hasil FROM kamar WHERE group_kamar="LANTAI1PDP"');
+        $data['dirawat'] = DB::select('SELECT COUNT(*) AS hasil FROM reservasi inner join kamar on kamar.id_kamar = reservasi.id_kamar where reservasi.keterangan = "terisi" and kamar.group_kamar = "LANTAI1PDP"');
+        $data['booking'] = DB::select('SELECT COUNT(*) AS hasil FROM reservasi inner join kamar on kamar.id_kamar = reservasi.id_kamar where reservasi.status_kamar = "Booking" and kamar.group_kamar = "LANTAI1PDP"');
+        $data['keluar'] = DB::select('SELECT COUNT(*) AS hasil FROM reservasi inner join kamar on kamar.id_kamar = reservasi.id_kamar where reservasi.status_kamar = "keluar" and kamar.group_kamar = "LANTAI1PDP"');
+
+        $data['png'] = DB::select('SELECT penanggungjawab, COUNT(penanggungjawab) AS hasil FROM reservasi WHERE status_kamar = "keluar" GROUP BY penanggungjawab');
+        $data['pakai'] = DB::select('SELECT (SELECT DISTINCT COUNT(id_kamar) FROM reservasi WHERE keterangan = "Terisi") AS Terpakai, ((SELECT COUNT(*) FROM kamar) - (SELECT DISTINCT COUNT(id_kamar) FROM reservasi WHERE keterangan = "Terisi")) AS tidak_terpakai');
+
+        $data['jml_ka'] = DB::select('SELECT COUNT(*) FROM kamar');
+        //Update Booking Status
+        DB::select('UPDATE reservasi SET keterangan = "Terisi", status_booking = "MRS", status_kamar = "masuk" WHERE DATE(tgl_masuk) = DATE(NOW()) AND status_booking = "Booking"');
+
          //cekkamar
          $data['kamar219'] = DB::select('SELECT count(*) AS hasil FROM reservasi WHERE id_kamar = 219 AND status_kamar = "masuk" AND status_booking = "MRS"');
          $data['kamar220'] = DB::select('SELECT count(*) AS hasil FROM reservasi WHERE id_kamar = 220 AND status_kamar = "masuk" AND status_booking = "MRS"');
@@ -1659,6 +1718,18 @@ class RuangController extends Controller
         return view('ruangan.lantaisatu', $data);
     }
     public function lantai2rba1(){
+        $data['jml_kamar'] = DB::select('SELECT COUNT(*) AS hasil FROM kamar WHERE group_kamar="LANTAI2RBA1"');
+        $data['dirawat'] = DB::select('SELECT COUNT(*) AS hasil FROM reservasi inner join kamar on kamar.id_kamar = reservasi.id_kamar where reservasi.keterangan = "terisi" and kamar.group_kamar = "LANTAI2RBA1"');
+        $data['booking'] = DB::select('SELECT COUNT(*) AS hasil FROM reservasi inner join kamar on kamar.id_kamar = reservasi.id_kamar where reservasi.status_kamar = "Booking" and kamar.group_kamar = "LANTAI2RBA1"');
+        $data['keluar'] = DB::select('SELECT COUNT(*) AS hasil FROM reservasi inner join kamar on kamar.id_kamar = reservasi.id_kamar where reservasi.status_kamar = "keluar" and kamar.group_kamar = "LANTAI2RBA1"');
+
+        $data['png'] = DB::select('SELECT penanggungjawab, COUNT(penanggungjawab) AS hasil FROM reservasi WHERE status_kamar = "keluar" GROUP BY penanggungjawab');
+        $data['pakai'] = DB::select('SELECT (SELECT DISTINCT COUNT(id_kamar) FROM reservasi WHERE keterangan = "Terisi") AS Terpakai, ((SELECT COUNT(*) FROM kamar) - (SELECT DISTINCT COUNT(id_kamar) FROM reservasi WHERE keterangan = "Terisi")) AS tidak_terpakai');
+
+        $data['jml_ka'] = DB::select('SELECT COUNT(*) FROM kamar');
+        //Update Booking Status
+        DB::select('UPDATE reservasi SET keterangan = "Terisi", status_booking = "MRS", status_kamar = "masuk" WHERE DATE(tgl_masuk) = DATE(NOW()) AND status_booking = "Booking"');        
+
          //cekkamar
          $data['kamar224'] = DB::select('SELECT count(*) AS hasil FROM reservasi WHERE id_kamar = 224 AND status_kamar = "masuk" AND status_booking = "MRS"');
 
@@ -2001,6 +2072,18 @@ class RuangController extends Controller
         return view('ruangan.lantaidua1', $data);
     }
     public function lantai2rba2(){
+        $data['jml_kamar'] = DB::select('SELECT COUNT(*) AS hasil FROM kamar WHERE group_kamar="LANTAI2RBA2"');
+        $data['dirawat'] = DB::select('SELECT COUNT(*) AS hasil FROM reservasi inner join kamar on kamar.id_kamar = reservasi.id_kamar where reservasi.keterangan = "terisi" and kamar.group_kamar = "LANTAI2RBA2"');
+        $data['booking'] = DB::select('SELECT COUNT(*) AS hasil FROM reservasi inner join kamar on kamar.id_kamar = reservasi.id_kamar where reservasi.status_kamar = "Booking" and kamar.group_kamar = "LANTAI2RBA2"');
+        $data['keluar'] = DB::select('SELECT COUNT(*) AS hasil FROM reservasi inner join kamar on kamar.id_kamar = reservasi.id_kamar where reservasi.status_kamar = "keluar" and kamar.group_kamar = "LANTAI2RBA2"');
+
+        $data['png'] = DB::select('SELECT penanggungjawab, COUNT(penanggungjawab) AS hasil FROM reservasi WHERE status_kamar = "keluar" GROUP BY penanggungjawab');
+        $data['pakai'] = DB::select('SELECT (SELECT DISTINCT COUNT(id_kamar) FROM reservasi WHERE keterangan = "Terisi") AS Terpakai, ((SELECT COUNT(*) FROM kamar) - (SELECT DISTINCT COUNT(id_kamar) FROM reservasi WHERE keterangan = "Terisi")) AS tidak_terpakai');
+
+        $data['jml_ka'] = DB::select('SELECT COUNT(*) FROM kamar');
+        //Update Booking Status
+        DB::select('UPDATE reservasi SET keterangan = "Terisi", status_booking = "MRS", status_kamar = "masuk" WHERE DATE(tgl_masuk) = DATE(NOW()) AND status_booking = "Booking"'); 
+
          //cekkamar
          $data['kamar110'] = DB::select('SELECT count(*) AS hasil FROM reservasi WHERE id_kamar = 110 AND status_kamar = "masuk" AND status_booking = "MRS"');
          $data['kamar111'] = DB::select('SELECT count(*) AS hasil FROM reservasi WHERE id_kamar = 111 AND status_kamar = "masuk" AND status_booking = "MRS"');
@@ -2167,6 +2250,18 @@ class RuangController extends Controller
         return view('ruangan.lantaidua2', $data);
     }
     public function lantai3obg(){
+        $data['jml_kamar'] = DB::select('SELECT COUNT(*) AS hasil FROM kamar WHERE group_kamar="LANTAI3OBG"');
+        $data['dirawat'] = DB::select('SELECT COUNT(*) AS hasil FROM reservasi inner join kamar on kamar.id_kamar = reservasi.id_kamar where reservasi.keterangan = "terisi" and kamar.group_kamar = "LANTAI3OBG"');
+        $data['booking'] = DB::select('SELECT COUNT(*) AS hasil FROM reservasi inner join kamar on kamar.id_kamar = reservasi.id_kamar where reservasi.status_kamar = "Booking" and kamar.group_kamar = "LANTAI3OBG"');
+        $data['keluar'] = DB::select('SELECT COUNT(*) AS hasil FROM reservasi inner join kamar on kamar.id_kamar = reservasi.id_kamar where reservasi.status_kamar = "keluar" and kamar.group_kamar = "LANTAI3OBG"');
+
+        $data['png'] = DB::select('SELECT penanggungjawab, COUNT(penanggungjawab) AS hasil FROM reservasi WHERE status_kamar = "keluar" GROUP BY penanggungjawab');
+        $data['pakai'] = DB::select('SELECT (SELECT DISTINCT COUNT(id_kamar) FROM reservasi WHERE keterangan = "Terisi") AS Terpakai, ((SELECT COUNT(*) FROM kamar) - (SELECT DISTINCT COUNT(id_kamar) FROM reservasi WHERE keterangan = "Terisi")) AS tidak_terpakai');
+
+        $data['jml_ka'] = DB::select('SELECT COUNT(*) FROM kamar');
+        //Update Booking Status
+        DB::select('UPDATE reservasi SET keterangan = "Terisi", status_booking = "MRS", status_kamar = "masuk" WHERE DATE(tgl_masuk) = DATE(NOW()) AND status_booking = "Booking"');        
+
          //cekkamar
          $data['kamar122'] = DB::select('SELECT count(*) AS hasil FROM reservasi WHERE id_kamar = 122 AND status_kamar = "masuk" AND status_booking = "MRS"');
          $data['kamar123'] = DB::select('SELECT count(*) AS hasil FROM reservasi WHERE id_kamar = 123 AND status_kamar = "masuk" AND status_booking = "MRS"');
@@ -2439,14 +2534,23 @@ class RuangController extends Controller
                 AND status_kamar != "keluar" 
                 AND status_booking = "Booking") AS bkg,  
                                 kapasitas 
-                                FROM kamar WHERE id_kamar = "230"');
-                                                                    
-                                                 
- 
+                                FROM kamar WHERE id_kamar = "230"');         
 
         return view('ruangan.lantaitiga1', $data);
     }
     public function lantai3neo(){
+        $data['jml_kamar'] = DB::select('SELECT COUNT(*) AS hasil FROM kamar WHERE group_kamar="LANTAI3NEO"');
+        $data['dirawat'] = DB::select('SELECT COUNT(*) AS hasil FROM reservasi inner join kamar on kamar.id_kamar = reservasi.id_kamar where reservasi.keterangan = "terisi" and kamar.group_kamar = "LANTAI3NEO"');
+        $data['booking'] = DB::select('SELECT COUNT(*) AS hasil FROM reservasi inner join kamar on kamar.id_kamar = reservasi.id_kamar where reservasi.status_kamar = "Booking" and kamar.group_kamar = "LANTAI3NEO"');
+        $data['keluar'] = DB::select('SELECT COUNT(*) AS hasil FROM reservasi inner join kamar on kamar.id_kamar = reservasi.id_kamar where reservasi.status_kamar = "keluar" and kamar.group_kamar = "LANTAI3NEO"');
+
+        $data['png'] = DB::select('SELECT penanggungjawab, COUNT(penanggungjawab) AS hasil FROM reservasi WHERE status_kamar = "keluar" GROUP BY penanggungjawab');
+        $data['pakai'] = DB::select('SELECT (SELECT DISTINCT COUNT(id_kamar) FROM reservasi WHERE keterangan = "Terisi") AS Terpakai, ((SELECT COUNT(*) FROM kamar) - (SELECT DISTINCT COUNT(id_kamar) FROM reservasi WHERE keterangan = "Terisi")) AS tidak_terpakai');
+
+        $data['jml_ka'] = DB::select('SELECT COUNT(*) FROM kamar');
+        //Update Booking Status
+        DB::select('UPDATE reservasi SET keterangan = "Terisi", status_booking = "MRS", status_kamar = "masuk" WHERE DATE(tgl_masuk) = DATE(NOW()) AND status_booking = "Booking"');  
+
          //cekkamar
          $data['kamar231'] = DB::select('SELECT count(*) AS hasil FROM reservasi WHERE id_kamar = 231 AND status_kamar = "masuk" AND status_booking = "MRS"');
          $data['kamar232'] = DB::select('SELECT count(*) AS hasil FROM reservasi WHERE id_kamar = 232 AND status_kamar = "masuk" AND status_booking = "MRS"');
@@ -2800,6 +2904,18 @@ class RuangController extends Controller
         return view('ruangan.lantaitiga2', $data);
     }
     public function lantai4pdw(){
+        $data['jml_kamar'] = DB::select('SELECT COUNT(*) AS hasil FROM kamar WHERE group_kamar="LANTAI4PDW"');
+        $data['dirawat'] = DB::select('SELECT COUNT(*) AS hasil FROM reservasi inner join kamar on kamar.id_kamar = reservasi.id_kamar where reservasi.keterangan = "terisi" and kamar.group_kamar = "LANTAI4PDW"');
+        $data['booking'] = DB::select('SELECT COUNT(*) AS hasil FROM reservasi inner join kamar on kamar.id_kamar = reservasi.id_kamar where reservasi.status_kamar = "Booking" and kamar.group_kamar = "LANTAI4PDW"');
+        $data['keluar'] = DB::select('SELECT COUNT(*) AS hasil FROM reservasi inner join kamar on kamar.id_kamar = reservasi.id_kamar where reservasi.status_kamar = "keluar" and kamar.group_kamar = "LANTAI4PDW"');
+
+        $data['png'] = DB::select('SELECT penanggungjawab, COUNT(penanggungjawab) AS hasil FROM reservasi WHERE status_kamar = "keluar" GROUP BY penanggungjawab');
+        $data['pakai'] = DB::select('SELECT (SELECT DISTINCT COUNT(id_kamar) FROM reservasi WHERE keterangan = "Terisi") AS Terpakai, ((SELECT COUNT(*) FROM kamar) - (SELECT DISTINCT COUNT(id_kamar) FROM reservasi WHERE keterangan = "Terisi")) AS tidak_terpakai');
+
+        $data['jml_ka'] = DB::select('SELECT COUNT(*) FROM kamar');
+        //Update Booking Status
+        DB::select('UPDATE reservasi SET keterangan = "Terisi", status_booking = "MRS", status_kamar = "masuk" WHERE DATE(tgl_masuk) = DATE(NOW()) AND status_booking = "Booking"');  
+
          //cekkamar
          $data['kamar154'] = DB::select('SELECT count(*) AS hasil FROM reservasi WHERE id_kamar = 154 AND status_kamar = "masuk" AND status_booking = "MRS"');
          $data['kamar155'] = DB::select('SELECT count(*) AS hasil FROM reservasi WHERE id_kamar = 155 AND status_kamar = "masuk" AND status_booking = "MRS"');
