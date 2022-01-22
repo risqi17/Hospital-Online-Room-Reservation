@@ -141,6 +141,9 @@ class RuangController extends Controller
         //Update Booking Status
         DB::select('UPDATE reservasi SET keterangan = "Terisi", status_booking = "MRS", status_kamar = "masuk" WHERE DATE(tgl_masuk) = DATE(NOW()) AND status_booking = "Booking"');
 
+        // Cek utama
+        
+
         //cekkamar
         $data['kamar195'] = DB::select('SELECT count(*) AS hasil FROM reservasi WHERE id_kamar = 195 AND status_kamar = "masuk" AND status_booking = "MRS"');
         $data['kamar196'] = DB::select('SELECT count(*) AS hasil FROM reservasi WHERE id_kamar = 196 AND status_kamar = "masuk" AND status_booking = "MRS"');

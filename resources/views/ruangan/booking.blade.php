@@ -11,6 +11,10 @@
     
         {{-- Daterange --}}
         <link href="{{ asset('vendors/daterangepicker/daterangepicker.css')}}" rel="stylesheet" type="text/css" />
+
+            <!-- Toggles CSS -->
+        {{-- <link href="{{ asset('vendors/jquery-toggles/css/toggles.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('vendors/jquery-toggles/css/themes/toggles-light.css') }}" rel="stylesheet" type="text/css"> --}}
 @endsection
 
 @section('content')
@@ -44,6 +48,25 @@
                                 <label for="inputPassword3" class="col-sm-2 col-form-label">Nama Pasien</label>
                                 <div class="col-sm-6">
                                     <input type="text" class="form-control" id="bookusr" name="nama">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputPassword3" class="col-sm-2 col-form-label">Kamar 1 / Utama</label>
+                                <div class="col-sm-6">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="customRadio1" name="utama" class="custom-control-input" value="1">
+                                                <label class="custom-control-label" for="customRadio1">Kamar 1 / Utama</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="customRadio2" name="utama" class="custom-control-input" value="0" checked>
+                                                <label class="custom-control-label" for="customRadio2">Kamar Umum</label>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -114,6 +137,7 @@
                                         <th>Tanggal Masuk</th>
                                         <th>Tanggal Keluar</th>
                                         <th>Kamar</th>
+                                        <th>Kamar Utama</th>
                                         <th>Bilik</th>
                                         <th>Batal</th>
                                     </tr>
@@ -157,6 +181,9 @@
     <script src="{{ asset('vendors/moment/min/moment.min.js')}}"></script>
     <script src="{{ asset('vendors/daterangepicker/daterangepicker.js')}}"></script>
     <script src="{{ asset('dist/js/daterangepicker-data.js')}}"></script>
+
+    {{-- <script src="{{ asset('vendors/jquery-toggles/toggles.min.js') }}"></script> --}}
+
 
     <script>
         renderTanggal();
@@ -379,7 +406,16 @@
                                     var tgl_keluar = response['data'][i].tgl_keluar;
                                     var kamar = response['data'][i].nama_kamar;
                                     var bilik = response['data'][i].no_kamar;
+                                    var utama = response['data'][i].utama;
                                     var id_res = response['data'][i].id_reservasi;
+
+                                    var isUtama = 'Invalid';
+                                    if (utama == true) {
+                                        isUtama = 'Ya';
+                                    } else {
+                                        isUtama = 'Tidak';
+                                    }
+                                    console.log("test : "+utama);
 
                                     t.row.add([
                                         '<td>'+ nama +'</td>',
@@ -387,6 +423,7 @@
                                         '<td>'+ tgl_masuk +'</td>',
                                         '<td>'+ tgl_keluar +'</td>',
                                         '<td>'+ kamar +'</td>',
+                                        '<td>'+ isUtama +'</td>',
                                         '<td>'+ bilik +'</td>',
                                         '<td><a href="{{ url("/reservasi-batal") }}/'+ id_res +'/'+ cate +'" class="btn btn-danger btn-wth-icon btn-sm"><span class="icon-label"><span class="feather-icon"><i data-feather="plus"></i></span> </span><span class="btn-text">Batal</span></a></td>'
                                     ]).draw(false);
