@@ -17,39 +17,39 @@ class RekapController extends Controller
         return view('rekap', $data);
     }
     public function Seluruh(){
-        $data['data'] = DB::select('SELECT * FROM reservasi a LEFT JOIN kamar b ON a.id_kamar = b.id_kamar ');
+        $data['data'] = DB::select('SELECT * FROM reservasi a LEFT JOIN kamar b ON a.id_kamar = b.id_kamar order by a.tgl_booking desc');
 
         echo json_encode($data);
         exit;
     }
     public function SeluruhByKet($ket){
-        $data['data'] = DB::select('SELECT * FROM reservasi a LEFT JOIN kamar b ON a.id_kamar = b.id_kamar WHERE a.keterangan = "'.$ket.'" ');
+        $data['data'] = DB::select('SELECT * FROM reservasi a LEFT JOIN kamar b ON a.id_kamar = b.id_kamar WHERE a.keterangan = "'.$ket.'" order by a.tgl_booking desc');
 
         echo json_encode($data);
         exit;
     }
     public function SeluruhByTgl($tgl){
-        $data['data'] = DB::select('SELECT * FROM reservasi a LEFT JOIN kamar b ON a.id_kamar = b.id_kamar WHERE DATE(a.tgl_masuk) = "'.$tgl.'"');
+        $data['data'] = DB::select('SELECT * FROM reservasi a LEFT JOIN kamar b ON a.id_kamar = b.id_kamar WHERE DATE(a.tgl_masuk) = "'.$tgl.'" order by a.tgl_booking desc');
 
         echo json_encode($data);
         exit;
     }
     public function SeluruhByKetTgl($ket, $tgl){
-        $data['data'] = DB::select('SELECT * FROM reservasi a LEFT JOIN kamar b ON a.id_kamar = b.id_kamar WHERE a.keterangan = "'.$ket.'" AND  DATE(a.tgl_masuk) = "'.$tgl.'"');
+        $data['data'] = DB::select('SELECT * FROM reservasi a LEFT JOIN kamar b ON a.id_kamar = b.id_kamar WHERE a.keterangan = "'.$ket.'" AND  DATE(a.tgl_masuk) = "'.$tgl.'" order by a.tgl_booking desc');
 
         echo json_encode($data);
         exit;
     }
 
     public function SeluruhByKetKel($ket){
-        $data['data'] = DB::select('SELECT * FROM reservasi a LEFT JOIN kamar b ON a.id_kamar = b.id_kamar WHERE a.status_kamar = "'.$ket.'" ');
+        $data['data'] = DB::select('SELECT * FROM reservasi a LEFT JOIN kamar b ON a.id_kamar = b.id_kamar WHERE a.status_kamar = "'.$ket.'" order by a.tgl_booking desc');
 
         echo json_encode($data);
         exit;
     }
 
     public function SeluruhByKetTglKel($ket, $tgl){
-        $data['data'] = DB::select('SELECT * FROM reservasi a LEFT JOIN kamar b ON a.id_kamar = b.id_kamar WHERE a.status_kamar = "'.$ket.'" AND  DATE(a.tgl_masuk) = "'.$tgl.'"');
+        $data['data'] = DB::select('SELECT * FROM reservasi a LEFT JOIN kamar b ON a.id_kamar = b.id_kamar WHERE a.status_kamar = "'.$ket.'" AND  DATE(a.tgl_masuk) = "'.$tgl.'" order by a.tgl_booking desc');
 
         echo json_encode($data);
         exit;

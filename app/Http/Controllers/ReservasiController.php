@@ -67,6 +67,7 @@ class ReservasiController extends Controller
         $nama = $request->input('nama');
         $penanggung = $request->input('penanggung');
         $id_kamar = $request->input('id_kamar');
+        $utama = $request->input('utama');
         $bilik = $request->input('bilik');
 
         DB::table('reservasi')->insert([
@@ -77,6 +78,7 @@ class ReservasiController extends Controller
             'keterangan'        => 'Terisi',
             'status_booking'    => 'MRS',
             'no_kamar'          => $bilik,
+            'utama'             => $utama,
             'status_kamar'      => 'masuk'
         ]);
 
@@ -117,6 +119,7 @@ class ReservasiController extends Controller
         $penanggung = $request->input('penanggung');
         $id_kamar = $request->input('id_kamar');
         $bilik = $request->input('bilik');
+        $utama = $request->input('utama');
 
         $tgl = $request->input('daterange');
         $pecah = explode(" - ", $tgl);
@@ -136,6 +139,7 @@ class ReservasiController extends Controller
             'keterangan'        => '',
             'status_booking'    => 'Booking',
             'no_kamar'          => $bilik,
+            'utama'             => $utama,
             'status_kamar'      => 'Booking',
         ]);
 
@@ -198,7 +202,7 @@ class ReservasiController extends Controller
     }
 
     public function checkBookedById($id){
-        $data['data'] = DB::select('SELECT id_reservasi, nama_pasien, penanggungjawab, DATE_FORMAT(tgl_masuk, "%d-%m-%Y %h:%m:%s") AS tgl_masuk, DATE_FORMAT(tgl_keluar, "%d-%m-%Y %h:%m:%s") AS tgl_keluar, no_kamar, nama_kamar FROM reservasi a INNER JOIN kamar b ON a.id_kamar = b.id_kamar WHERE b.id_kamar = '.$id.' AND a.status_booking = "Booking"');
+        $data['data'] = DB::select('SELECT id_reservasi, utama, nama_pasien, penanggungjawab, DATE_FORMAT(tgl_masuk, "%d-%m-%Y %h:%m:%s") AS tgl_masuk, DATE_FORMAT(tgl_keluar, "%d-%m-%Y %h:%m:%s") AS tgl_keluar, no_kamar, nama_kamar FROM reservasi a INNER JOIN kamar b ON a.id_kamar = b.id_kamar WHERE b.id_kamar = '.$id.' AND a.status_booking = "Booking"');
 
         echo json_encode($data);
         exit;

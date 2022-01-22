@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 21, 2022 at 06:44 AM
--- Server version: 10.4.19-MariaDB
--- PHP Version: 8.0.6
+-- Waktu pembuatan: 22 Jan 2022 pada 09.01
+-- Versi server: 10.4.21-MariaDB
+-- Versi PHP: 7.4.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kamar`
+-- Struktur dari tabel `kamar`
 --
 
 CREATE TABLE `kamar` (
@@ -35,7 +35,7 @@ CREATE TABLE `kamar` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `kamar`
+-- Dumping data untuk tabel `kamar`
 --
 
 INSERT INTO `kamar` (`id_kamar`, `nama_kamar`, `kapasitas`, `group_kamar`) VALUES
@@ -243,7 +243,7 @@ INSERT INTO `kamar` (`id_kamar`, `nama_kamar`, `kapasitas`, `group_kamar`) VALUE
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pasien`
+-- Struktur dari tabel `pasien`
 --
 
 CREATE TABLE `pasien` (
@@ -255,7 +255,7 @@ CREATE TABLE `pasien` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `reservasi`
+-- Struktur dari tabel `reservasi`
 --
 
 CREATE TABLE `reservasi` (
@@ -267,39 +267,42 @@ CREATE TABLE `reservasi` (
   `tgl_keluar` datetime DEFAULT NULL,
   `tgl_booking` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `keterangan` varchar(100) NOT NULL,
+  `utama` tinyint(1) NOT NULL,
   `status_booking` varchar(100) NOT NULL,
   `status_kamar` varchar(50) DEFAULT NULL,
   `no_kamar` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `reservasi`
+-- Dumping data untuk tabel `reservasi`
 --
 
-INSERT INTO `reservasi` (`id_reservasi`, `nama_pasien`, `penanggungjawab`, `id_kamar`, `tgl_masuk`, `tgl_keluar`, `tgl_booking`, `keterangan`, `status_booking`, `status_kamar`, `no_kamar`) VALUES
-(14, 'Aan', 'AXA', 1, '2020-10-16 00:00:00', '2020-10-22 00:00:00', '2020-10-15 06:07:21', '', 'Booking', NULL, '1'),
-(15, 'Rizal', 'BPJS', 1, '2020-10-23 00:00:00', '2020-10-30 00:00:00', '2020-10-15 06:37:50', '', 'Booking', NULL, '1'),
-(16, 'Feri', 'AIA', 2, '2020-10-21 00:00:00', '2020-10-24 00:00:00', '2020-10-15 06:38:39', '', 'Booking', NULL, '1'),
-(17, 'Fajar', 'AIA', 2, '2020-10-28 00:00:00', '2020-10-30 00:00:00', '2020-10-15 06:54:40', '', 'Booking', NULL, '1'),
-(28, 'Ari', 'JKN', 4, '2020-10-22 05:01:58', NULL, '2020-10-22 05:01:58', 'Terisi', 'MRS', 'masuk', '1'),
-(35, 'Arya', 'AXA', 7, '2020-10-22 05:43:18', '2020-10-22 05:43:41', '2020-10-22 10:43:41', 'Sembuh', 'MRS', 'keluar', '2'),
-(36, 'Siska', 'AXA', 7, '2020-10-23 00:00:00', '2020-10-30 00:00:00', '2020-10-22 10:44:29', '', 'Booking', NULL, '1'),
-(37, 'Fanta', 'Mandiri', 7, '2020-10-24 00:00:00', '2020-10-29 00:00:00', '2020-10-22 10:54:13', '', 'Booking', NULL, '2'),
-(38, 'Rizal', 'BPJS', 34, '2020-10-23 10:45:21', NULL, '2020-10-23 03:45:21', 'Terisi', 'MRS', 'masuk', '1'),
-(39, 'Febi', 'AIA', 15, '2020-10-23 11:02:15', NULL, '2020-10-23 04:02:15', 'Terisi', 'MRS', 'masuk', '1'),
-(41, 'BROKU', 'AIA', 60, '2020-10-23 11:25:14', '2020-10-23 11:25:39', '2020-10-23 04:25:39', 'Pindah', 'MRS', 'keluar', '1'),
-(42, 'Siska', 'AXA', 56, '2020-10-23 11:26:33', NULL, '2020-10-23 04:26:33', 'Terisi', 'MRS', 'masuk', '1'),
-(43, 'Sera', 'ASA', 156, '2020-10-24 01:12:46', NULL, '2020-10-23 18:12:46', 'Terisi', 'MRS', 'masuk', '2'),
-(44, 'Anton', 'ADA', 168, '2020-10-24 01:13:31', NULL, '2020-10-23 18:13:31', 'Terisi', 'MRS', 'masuk', '1'),
-(45, 'dea gita', 'HARIS', 5, '2022-01-22 00:00:00', '2022-01-23 00:00:00', '2022-01-21 01:14:49', '', 'Booking', 'Booking', '1'),
-(46, 'diki', 'axa', 6, '2022-01-21 08:15:31', NULL, '2022-01-21 01:15:31', 'Terisi', 'MRS', 'masuk', '1'),
-(47, 'dita', 'prudential', 217, '2022-01-21 08:20:42', NULL, '2022-01-21 04:40:23', 'Terisi', 'MRS', 'masuk', '1'),
-(48, 'cena', 'prudential', 7, '2022-01-22 00:00:00', '2022-01-23 00:00:00', '2022-01-21 04:28:26', '', 'Booking', 'Booking', '1');
+INSERT INTO `reservasi` (`id_reservasi`, `nama_pasien`, `penanggungjawab`, `id_kamar`, `tgl_masuk`, `tgl_keluar`, `tgl_booking`, `keterangan`, `utama`, `status_booking`, `status_kamar`, `no_kamar`) VALUES
+(14, 'Aan', 'AXA', 1, '2020-10-16 00:00:00', '2020-10-22 00:00:00', '2020-10-15 06:07:21', '', 0, 'Booking', NULL, '1'),
+(15, 'Rizal', 'BPJS', 1, '2020-10-23 00:00:00', '2020-10-30 00:00:00', '2020-10-15 06:37:50', '', 0, 'Booking', NULL, '1'),
+(16, 'Feri', 'AIA', 2, '2020-10-21 00:00:00', '2020-10-24 00:00:00', '2020-10-15 06:38:39', '', 0, 'Booking', NULL, '1'),
+(17, 'Fajar', 'AIA', 2, '2020-10-28 00:00:00', '2020-10-30 00:00:00', '2020-10-15 06:54:40', '', 0, 'Booking', NULL, '1'),
+(28, 'Ari', 'JKN', 4, '2020-10-22 05:01:58', NULL, '2020-10-22 05:01:58', 'Terisi', 0, 'MRS', 'masuk', '1'),
+(35, 'Arya', 'AXA', 7, '2020-10-22 05:43:18', '2020-10-22 05:43:41', '2020-10-22 10:43:41', 'Sembuh', 0, 'MRS', 'keluar', '2'),
+(36, 'Siska', 'AXA', 7, '2020-10-23 00:00:00', '2020-10-30 00:00:00', '2020-10-22 10:44:29', '', 0, 'Booking', NULL, '1'),
+(37, 'Fanta', 'Mandiri', 7, '2020-10-24 00:00:00', '2020-10-29 00:00:00', '2020-10-22 10:54:13', '', 0, 'Booking', NULL, '2'),
+(38, 'Rizal', 'BPJS', 34, '2020-10-23 10:45:21', NULL, '2020-10-23 03:45:21', 'Terisi', 0, 'MRS', 'masuk', '1'),
+(39, 'Febi', 'AIA', 15, '2020-10-23 11:02:15', NULL, '2020-10-23 04:02:15', 'Terisi', 0, 'MRS', 'masuk', '1'),
+(41, 'BROKU', 'AIA', 60, '2020-10-23 11:25:14', '2020-10-23 11:25:39', '2020-10-23 04:25:39', 'Pindah', 0, 'MRS', 'keluar', '1'),
+(42, 'Siska', 'AXA', 56, '2020-10-23 11:26:33', NULL, '2020-10-23 04:26:33', 'Terisi', 0, 'MRS', 'masuk', '1'),
+(43, 'Sera', 'ASA', 156, '2020-10-24 01:12:46', NULL, '2020-10-23 18:12:46', 'Terisi', 0, 'MRS', 'masuk', '2'),
+(44, 'Anton', 'ADA', 168, '2020-10-24 01:13:31', NULL, '2020-10-23 18:13:31', 'Terisi', 0, 'MRS', 'masuk', '1'),
+(45, 'dea gita', 'HARIS', 5, '2022-01-22 00:00:00', '2022-01-22 14:29:20', '2022-01-22 07:29:20', 'KRS / Keluar Rawat Inap', 0, 'MRS', 'keluar', '1'),
+(46, 'diki', 'axa', 6, '2022-01-21 08:15:31', NULL, '2022-01-21 01:15:31', 'Terisi', 0, 'MRS', 'masuk', '1'),
+(47, 'dita', 'prudential', 217, '2022-01-21 08:20:42', NULL, '2022-01-21 04:40:23', 'Terisi', 0, 'MRS', 'masuk', '1'),
+(48, 'cena', 'prudential', 7, '2022-01-22 00:00:00', '2022-01-23 00:00:00', '2022-01-22 07:25:49', 'Terisi', 0, 'MRS', 'masuk', '1'),
+(50, 'Tera', 'Umum', 21, '2022-01-22 14:26:50', NULL, '2022-01-22 07:26:50', 'Terisi', 1, 'MRS', 'masuk', '1'),
+(51, 'Wera', 'Umum', 5, '2022-01-22 14:29:42', NULL, '2022-01-22 07:29:42', 'Terisi', 1, 'MRS', 'masuk', '1');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_admin`
+-- Struktur dari tabel `user_admin`
 --
 
 CREATE TABLE `user_admin` (
@@ -314,7 +317,7 @@ CREATE TABLE `user_admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `user_admin`
+-- Dumping data untuk tabel `user_admin`
 --
 
 INSERT INTO `user_admin` (`user_id`, `name`, `email`, `username`, `password`, `avatar`, `level`, `status`) VALUES
@@ -326,53 +329,53 @@ INSERT INTO `user_admin` (`user_id`, `name`, `email`, `username`, `password`, `a
 --
 
 --
--- Indexes for table `kamar`
+-- Indeks untuk tabel `kamar`
 --
 ALTER TABLE `kamar`
   ADD PRIMARY KEY (`id_kamar`);
 
 --
--- Indexes for table `pasien`
+-- Indeks untuk tabel `pasien`
 --
 ALTER TABLE `pasien`
   ADD PRIMARY KEY (`id_pasien`);
 
 --
--- Indexes for table `reservasi`
+-- Indeks untuk tabel `reservasi`
 --
 ALTER TABLE `reservasi`
   ADD PRIMARY KEY (`id_reservasi`);
 
 --
--- Indexes for table `user_admin`
+-- Indeks untuk tabel `user_admin`
 --
 ALTER TABLE `user_admin`
   ADD PRIMARY KEY (`user_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `kamar`
+-- AUTO_INCREMENT untuk tabel `kamar`
 --
 ALTER TABLE `kamar`
   MODIFY `id_kamar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=253;
 
 --
--- AUTO_INCREMENT for table `pasien`
+-- AUTO_INCREMENT untuk tabel `pasien`
 --
 ALTER TABLE `pasien`
   MODIFY `id_pasien` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `reservasi`
+-- AUTO_INCREMENT untuk tabel `reservasi`
 --
 ALTER TABLE `reservasi`
-  MODIFY `id_reservasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `id_reservasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
--- AUTO_INCREMENT for table `user_admin`
+-- AUTO_INCREMENT untuk tabel `user_admin`
 --
 ALTER TABLE `user_admin`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;

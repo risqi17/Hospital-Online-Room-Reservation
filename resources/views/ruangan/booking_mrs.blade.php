@@ -42,6 +42,26 @@
                                     <input type="text" class="form-control" id="bookusr" name="nama" required>
                                 </div>
                             </div>
+
+                            <div class="form-group row">
+                                <label for="inputPassword3" class="col-sm-2 col-form-label">Kamar 1 / Utama</label>
+                                <div class="col-sm-6">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="customRadio1" name="utama" class="custom-control-input" value="1">
+                                                <label class="custom-control-label" for="customRadio1">Kamar 1 / Utama</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="customRadio2" name="utama" class="custom-control-input" value="0" checked>
+                                                <label class="custom-control-label" for="customRadio2">Kamar Umum</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             
                             <div class="form-group row">
                                 <label for="inputPassword3" class="col-sm-2 col-form-label">Penanggung</label>
