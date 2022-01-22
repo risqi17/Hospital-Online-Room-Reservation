@@ -12,6 +12,96 @@
 
 <!-- Container -->
 <div class="container-fluid mt-xl-50 mt-sm-30 mt-15">
+    <div class="hk-row">
+
+
+        <div class="col-lg-3 col-sm-6">
+            <div class="card card-sm">
+                <div class="card-body">
+                    <span class="d-block font-11 font-weight-500 text-dark text-uppercase mb-10">Jumlah Kamar</span>
+                    <div class="d-flex align-items-center justify-content-between position-relative">
+                        <div>
+                           <span class="d-block display-5 font-weight-400 text-dark"><span class="counter-anim">
+                               @foreach ($jml_kamar as $jk)
+                                   {{ $jk->hasil }}  
+                               @endforeach
+                               </span> Kamar</span>
+                        </div>
+                        {{-- <div class="position-absolute r-0">
+                            <span id="pie_chart_1" class="d-flex easy-pie-chart" data-percent="86">
+                                <span class="percent head-font">86</span>
+                            </span>
+                        </div> --}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-sm-6">
+            <div class="card card-sm">
+                <div class="card-body">
+                    <span class="d-block font-11 font-weight-500 text-dark text-uppercase mb-10">Pasien Dirawat</span>
+                    <div class="d-flex align-items-center justify-content-between position-relative">
+                        <div>
+                            <span class="d-block">
+                                <span class="display-5 font-weight-400 text-dark"><span class="counter-anim">@foreach ($dirawat as $dr)
+                                   {{ $dr->hasil }}  
+                               @endforeach</span> Pasien</span>
+                            </span>
+                        </div>
+                        {{-- <div class="position-absolute r-0">
+                            <span id="pie_chart_2" class="d-flex easy-pie-chart" data-percent="75">
+                                <span class="percent head-font">75</span>
+                            </span>
+                        </div> --}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+            <div class="card card-sm">
+                <div class="card-body">
+                    <span class="d-block font-11 font-weight-500 text-dark text-uppercase mb-10">Pasien Booking</span>
+                    <div class="d-flex align-items-end justify-content-between">
+                        <div>
+                            <span class="d-block">
+                                <span class="display-5 font-weight-400 text-dark"><span class="counter-anim">
+                                    @foreach ($booking as $bk)
+                                   {{ $bk->hasil }}  
+                               @endforeach</span> Pasien</span>
+                                
+                            </span>
+                        </div>
+                        {{-- <div>
+                            <span class="text-success font-12 font-weight-600">+5%</span>
+                        </div> --}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+            <div class="card card-sm">
+                <div class="card-body">
+                    <span class="d-block font-11 font-weight-500 text-dark text-uppercase mb-10">Pasien Keluar</span>
+                    <div class="d-flex align-items-end justify-content-between">
+                        <div>
+                            <span class="d-block">
+                                <span class="display-5 font-weight-400 text-dark"><span class="counter-anim">
+                                    @foreach ($keluar as $kl)
+                                   {{ $kl->hasil }}  
+                               @endforeach</span> Pasien</span>
+                            </span>
+                        </div>
+                        {{-- <div>
+                            <span class="text-danger font-12 font-weight-600">-12%</span>
+                        </div> --}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
     <!-- Row -->
      <div class="row">
          <div class="col-xl-12">
@@ -2094,7 +2184,7 @@
 </div>
 
 {{-- Modal Pilihan --}}
-<div class="modal fade" id="ChoiceModal9" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="ChoiceModal33" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">

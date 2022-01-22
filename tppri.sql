@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 07 Jan 2022 pada 15.21
--- Versi server: 10.4.21-MariaDB
--- Versi PHP: 7.4.23
+-- Generation Time: Jan 21, 2022 at 06:44 AM
+-- Server version: 10.4.19-MariaDB
+-- PHP Version: 8.0.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kamar`
+-- Table structure for table `kamar`
 --
 
 CREATE TABLE `kamar` (
@@ -35,7 +35,7 @@ CREATE TABLE `kamar` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `kamar`
+-- Dumping data for table `kamar`
 --
 
 INSERT INTO `kamar` (`id_kamar`, `nama_kamar`, `kapasitas`, `group_kamar`) VALUES
@@ -45,34 +45,18 @@ INSERT INTO `kamar` (`id_kamar`, `nama_kamar`, `kapasitas`, `group_kamar`) VALUE
 (4, 'ICU 4', 1, 'ICU'),
 (5, 'ICU 5', 1, 'ICU'),
 (6, 'ICU 6', 1, 'ICU'),
-(7, 'CENDANA 101', 3, 'PAVILIUN1'),
-(8, 'JATI EMAS 102', 3, 'PAVILIUN1'),
-(9, 'JATI EMAS 103', 3, 'PAVILIUN1'),
-(10, 'JATI EMAS 104', 3, 'PAVILIUN1'),
-(11, 'JATI EMAS 105', 3, 'PAVILIUN1'),
-(12, 'JATI EMAS 106', 3, 'PAVILIUN1'),
-(13, 'JATI EMAS 107', 3, 'PAVILIUN1'),
-(14, 'FLAMBOYAN 108', 3, 'PAVILIUN1'),
-(15, 'FLAMBOYAN 109', 3, 'PAVILIUN1'),
-(16, 'FLAMBOYAN 110', 3, 'PAVILIUN1'),
-(17, 'FLAMBOYAN 111', 3, 'PAVILIUN1'),
-(18, 'FLAMBOYAN 112', 3, 'PAVILIUN1'),
-(19, 'FLAMBOYAN 113', 3, 'PAVILIUN1'),
-(20, 'FLAMBOYAN 114', 3, 'PAVILIUN1'),
-(21, 'FLAMBOYAN 115', 3, 'PAVILIUN1'),
-(22, 'FLAMBOYAN 116', 3, 'PAVILIUN1'),
-(23, 'FLAMBOYAN 117', 3, 'PAVILIUN1'),
-(24, 'FLAMBOYAN 118', 3, 'PAVILIUN1'),
-(25, 'FLAMBOYAN 119', 3, 'PAVILIUN1'),
-(26, 'FLAMBOYAN 120', 3, 'PAVILIUN1'),
-(27, 'CENDRAWASIH 201', 3, 'PAVILIUN2'),
-(28, 'MURAI 202', 3, 'PAVILIUN2'),
-(29, 'MURAI 203', 3, 'PAVILIUN2'),
-(30, 'MURAI 204', 3, 'PAVILIUN2'),
-(31, 'MURAI 205', 3, 'PAVILIUN2'),
-(32, 'MURAI 206', 3, 'PAVILIUN2'),
-(33, 'MURAI 207', 3, 'PAVILIUN2'),
-(34, 'KENARI 208', 3, 'PAVILIUN2'),
+(7, 'CENDANA 101', 1, 'PAVILIUN1'),
+(8, 'JATI EMAS 102', 1, 'PAVILIUN1'),
+(9, 'JATI EMAS 103', 1, 'PAVILIUN1'),
+(10, 'JATI EMAS 104', 1, 'PAVILIUN1'),
+(21, 'FLAMBOYAN 115', 1, 'PAVILIUN1'),
+(27, 'CENDRAWASIH 201', 1, 'PAVILIUN2'),
+(28, 'MURAI 202', 1, 'PAVILIUN2'),
+(29, 'MURAI 203', 1, 'PAVILIUN2'),
+(30, 'MURAI 204', 1, 'PAVILIUN2'),
+(31, 'MURAI 205', 1, 'PAVILIUN2'),
+(32, 'MURAI 206', 1, 'PAVILIUN2'),
+(33, 'MURAI 207', 1, 'PAVILIUN2'),
 (35, 'PARKIT 209-1', 1, 'PAVILIUN2'),
 (36, 'PARKIT 209-2', 1, 'PAVILIUN2'),
 (37, 'PARKIT 210-1', 1, 'PAVILIUN2'),
@@ -83,28 +67,22 @@ INSERT INTO `kamar` (`id_kamar`, `nama_kamar`, `kapasitas`, `group_kamar`) VALUE
 (42, 'PARKIT 212-2', 1, 'PAVILIUN2'),
 (43, 'PARKIT 213-1', 1, 'PAVILIUN2'),
 (44, 'PARKIT 213-2', 1, 'PAVILIUN2'),
-(45, 'KENARI 214', 3, 'PAVILIUN2'),
-(46, 'KENARI 215', 3, 'PAVILIUN2'),
-(47, 'KENARI 216', 3, 'PAVILIUN2'),
-(48, 'KENARI 217', 3, 'PAVILIUN2'),
-(49, 'KENARI 218', 3, 'PAVILIUN2'),
-(50, 'KENARI 219', 3, 'PAVILIUN2'),
-(51, 'KENARI 220', 3, 'PAVILIUN2'),
-(52, 'GAHARU 301', 3, 'PAVILIUN3'),
-(53, 'MAHONI 302', 3, 'PAVILIUN3'),
-(54, 'MAHONI 303', 3, 'PAVILIUN3'),
-(55, 'ALBASIA 305', 3, 'PAVILIUN3'),
-(56, 'ALBASIA 306', 3, 'PAVILIUN3'),
-(57, 'ALBASIA 308', 3, 'PAVILIUN3'),
-(58, 'ALBASIA 309', 3, 'PAVILIUN3'),
+(45, 'KENARI 214', 1, 'PAVILIUN2'),
+(46, 'KENARI 215', 1, 'PAVILIUN2'),
+(47, 'KENARI 216', 1, 'PAVILIUN2'),
+(52, 'GAHARU 301', 1, 'PAVILIUN3'),
+(53, 'MAHONI 302', 1, 'PAVILIUN3'),
+(54, 'MAHONI 303', 1, 'PAVILIUN3'),
+(55, 'ALBASIA 305', 1, 'PAVILIUN3'),
+(56, 'ALBASIA 306', 1, 'PAVILIUN3'),
+(57, 'ALBASIA 308', 1, 'PAVILIUN3'),
+(58, 'ALBASIA 309', 1, 'PAVILIUN3'),
 (59, 'PINUS 304-1', 1, 'PAVILIUN3'),
 (60, 'PINUS 304-2', 1, 'PAVILIUN3'),
 (61, 'AKASIA 307-1', 1, 'PAVILIUN3'),
 (62, 'AKASIA 307-2', 1, 'PAVILIUN3'),
-(63, 'KEMUNING 101', 3, 'LANTAI1PDP'),
-(64, 'ALAMANDA 105', 3, 'LANTAI1PDP'),
-(65, 'ALAMANDA 103', 3, 'LANTAI1PDP'),
-(66, 'ALAMANDA 102', 3, 'LANTAI1PDP'),
+(63, 'KEMUNING 101', 1, 'LANTAI1PDP'),
+(65, 'ALAMANDA 103', 1, 'LANTAI1PDP'),
 (67, 'AZALEA 104-1', 1, 'LANTAI1PDP'),
 (68, 'AZALEA 104-2', 1, 'LANTAI1PDP'),
 (69, 'AZALEA 107-1', 1, 'LANTAI1PDP'),
@@ -113,8 +91,6 @@ INSERT INTO `kamar` (`id_kamar`, `nama_kamar`, `kapasitas`, `group_kamar`) VALUE
 (72, 'AZALEA 106-2', 1, 'LANTAI1PDP'),
 (73, 'AZALEA 109-1', 1, 'LANTAI1PDP'),
 (74, 'AZALEA 109-2', 1, 'LANTAI1PDP'),
-(75, 'AZALEA 108-1', 1, 'LANTAI1PDP'),
-(76, 'AZALEA 108-2', 1, 'LANTAI1PDP'),
 (77, 'SERUNI 111-1', 1, 'LANTAI1PDP'),
 (78, 'SERUNI 111-2', 1, 'LANTAI1PDP'),
 (79, 'TANJUNG 110-1', 1, 'LANTAI1PDP'),
@@ -122,15 +98,13 @@ INSERT INTO `kamar` (`id_kamar`, `nama_kamar`, `kapasitas`, `group_kamar`) VALUE
 (81, 'SERUNI 111-3', 1, 'LANTAI1PDP'),
 (82, 'SERUNI 111-4', 1, 'LANTAI1PDP'),
 (83, 'TANJUNG 110-3', 1, 'LANTAI1PDP'),
-(84, 'TANJUNG 110', 1, 'LANTAI1PDP'),
+(84, 'TANJUNG 110-4', 1, 'LANTAI1PDP'),
 (85, 'AZALEA 205-1', 1, 'LANTAI2RBA1'),
-(86, 'ALAMANDA 203', 3, 'LANTAI2RBA1'),
-(87, 'ALAMANDA 204', 3, 'LANTAI2RBA1'),
+(86, 'ALAMANDA 203', 1, 'LANTAI2RBA1'),
+(87, 'ALAMANDA 204', 1, 'LANTAI2RBA1'),
 (88, 'AZALEA 202-1', 1, 'LANTAI2RBA1'),
-(89, 'AZALEA 204-1', 1, 'LANTAI2RBA1'),
 (90, 'AZALEA 205-2', 1, 'LANTAI2RBA1'),
 (91, 'AZALEA 202-2', 1, 'LANTAI2RBA1'),
-(92, 'AZALEA 204-2', 1, 'LANTAI2RBA1'),
 (93, 'AZALEA 207-1', 1, 'LANTAI2RBA1'),
 (94, 'AZALEA 207-2', 1, 'LANTAI2RBA1'),
 (95, 'AZALEA 206-1', 1, 'LANTAI2RBA1'),
@@ -149,7 +123,6 @@ INSERT INTO `kamar` (`id_kamar`, `nama_kamar`, `kapasitas`, `group_kamar`) VALUE
 (108, 'SERUNI 210-4', 1, 'LANTAI2RBA1'),
 (109, 'SERUNI 210-5', 1, 'LANTAI2RBA1'),
 (110, 'SERUNI 213-1', 1, 'LANTAI2RBA2'),
-(111, 'KOSONG', 1, 'LANTAI2RBA2'),
 (112, 'TANJUNG 212-1', 1, 'LANTAI2RBA2'),
 (113, 'TANJUNG 212-2', 1, 'LANTAI2RBA2'),
 (114, 'SERUNI 213-2', 1, 'LANTAI2RBA2'),
@@ -160,43 +133,19 @@ INSERT INTO `kamar` (`id_kamar`, `nama_kamar`, `kapasitas`, `group_kamar`) VALUE
 (119, 'SERUNI 213-5', 1, 'LANTAI2RBA2'),
 (120, 'TANJUNG 212-5', 1, 'LANTAI2RBA2'),
 (121, 'TANJUNG 212-6', 1, 'LANTAI2RBA2'),
-(122, 'ALAMANDA 304', 3, 'LANTAI3OBG'),
 (123, 'TERATAI 302', 1, 'LANTAI3OBG'),
-(124, 'AZALEA 306-1', 1, 'LANTAI3OBG'),
-(125, 'AZALEA 306-2', 1, 'LANTAI3OBG'),
-(126, 'AZALEA 309-1', 1, 'LANTAI3OBG'),
-(127, 'AZALEA 306-1', 1, 'LANTAI3OBG'),
-(128, 'AZALEA 306-2', 1, 'LANTAI3OBG'),
-(129, 'AZALEA 309-2', 1, 'LANTAI3OBG'),
 (130, 'SERUNI 310-1', 1, 'LANTAI3OBG'),
 (131, 'SERUNI 310-2', 1, 'LANTAI3OBG'),
 (132, 'SERUNI 310-3', 1, 'LANTAI3OBG'),
 (133, 'SERUNI 310-4', 1, 'LANTAI3OBG'),
 (134, 'SERUNI 310-5', 1, 'LANTAI3OBG'),
 (135, 'SERUNI 310-6', 1, 'LANTAI3OBG'),
-(136, 'SERUNI 310-7', 1, 'LANTAI3OBG'),
-(137, 'RUANG OBSERVASI', 1, 'LANTAI3NEO'),
-(138, 'RUANG OBSERVASI', 1, 'LANTAI3NEO'),
-(139, 'TERATAI', 1, 'LANTAI3NEO'),
-(140, 'ALAMANDA 1', 3, 'LANTAI3NEO'),
-(141, 'ALAMANDA 2', 3, 'LANTAI3NEO'),
-(142, 'RUANG FOTO TERAPI', 1, 'LANTAI3NEO'),
-(143, 'RUANG FOTO TERAPI', 1, 'LANTAI3NEO'),
-(144, 'RUANG FOTO TERAPI', 1, 'LANTAI3NEO'),
 (145, 'AZALEA 1', 1, 'LANTAI3NEO'),
 (146, 'AZALEA 2', 1, 'LANTAI3NEO'),
-(147, 'RUANG ISOLASI', 1, 'LANTAI3NEO'),
-(148, 'RUANG ISOLASI', 1, 'LANTAI3NEO'),
-(149, 'AZALEA 3', 1, 'LANTAI3NEO'),
-(150, 'AZALEA 4', 1, 'LANTAI3NEO'),
 (151, 'SERUNI 1', 1, 'LANTAI3NEO'),
 (152, 'SERUNI 2', 1, 'LANTAI3NEO'),
 (153, 'SERUNI 3', 1, 'LANTAI3NEO'),
-(154, 'KEMUNING 401', 3, 'LANTAI4PDW'),
-(155, 'ALAMANDA 105', 3, 'LANTAI4PDW'),
-(156, 'ALAMANDA 103', 3, 'LANTAI4PDW'),
-(157, 'ALAMANDA 402', 3, 'LANTAI4PDW'),
-(158, 'ALAMANDA 404', 3, 'LANTAI4PDW'),
+(154, 'KEMUNING 401', 1, 'LANTAI4PDW'),
 (159, 'AZALEA 407-1', 1, 'LANTAI4PDW'),
 (160, 'AZALEA 407-2', 1, 'LANTAI4PDW'),
 (161, 'AZALEA 406-1', 1, 'LANTAI4PDW'),
@@ -233,16 +182,16 @@ INSERT INTO `kamar` (`id_kamar`, `nama_kamar`, `kapasitas`, `group_kamar`) VALUE
 (192, 'MERPATI 222-1', 1, 'PAVILIUN2'),
 (193, 'MERPATI 222-2', 1, 'PAVILIUN2'),
 (194, 'MERPATI 222-3', 1, 'PAVILIUN2'),
-(195, 'FLAMBOYAN 116-1', 3, 'PAVILIUN1'),
-(196, 'FLAMBOYAN 116-2', 3, 'PAVILIUN1'),
-(197, 'FLAMBOYAN 117-1', 3, 'PAVILIUN1'),
-(198, 'FLAMBOYAN 117-2', 3, 'PAVILIUN1'),
-(199, 'FLAMBOYAN 118-1', 3, 'PAVILIUN1'),
-(200, 'FLAMBOYAN 118-2', 3, 'PAVILIUN1'),
-(201, 'FLAMBOYAN 119-1', 3, 'PAVILIUN1'),
-(202, 'FLAMBOYAN 119-2', 3, 'PAVILIUN1'),
-(203, 'FLAMBOYAN 120-1', 3, 'PAVILIUN1'),
-(204, 'FLAMBOYAN 120-2', 3, 'PAVILIUN1'),
+(195, 'FLAMBOYAN 116-1', 1, 'PAVILIUN1'),
+(196, 'FLAMBOYAN 116-2', 1, 'PAVILIUN1'),
+(197, 'FLAMBOYAN 117-1', 1, 'PAVILIUN1'),
+(198, 'FLAMBOYAN 117-2', 1, 'PAVILIUN1'),
+(199, 'FLAMBOYAN 118-1', 1, 'PAVILIUN1'),
+(200, 'FLAMBOYAN 118-2', 1, 'PAVILIUN1'),
+(201, 'FLAMBOYAN 119-1', 1, 'PAVILIUN1'),
+(202, 'FLAMBOYAN 119-2', 1, 'PAVILIUN1'),
+(203, 'FLAMBOYAN 120-1', 1, 'PAVILIUN1'),
+(204, 'FLAMBOYAN 120-2', 1, 'PAVILIUN1'),
 (205, 'ICU ISOLASI 109', 1, 'PAVILIUN1'),
 (206, 'ICU ISOLASI 110', 1, 'PAVILIUN1'),
 (207, 'ICU ISOLASI 111', 1, 'PAVILIUN1'),
@@ -256,14 +205,14 @@ INSERT INTO `kamar` (`id_kamar`, `nama_kamar`, `kapasitas`, `group_kamar`) VALUE
 (215, 'ISOLASI 112-2', 1, 'PAVILIUN1'),
 (217, 'ICU 7', 1, 'ICU'),
 (218, 'ICU 8', 1, 'ICU'),
-(219, 'ALAMANDA 108', 3, 'LANTAI1PDP'),
+(219, 'ALAMANDA 108', 1, 'LANTAI1PDP'),
 (220, 'AZALEA 102-1', 1, 'LANTAI1PDP'),
 (221, 'AZALEA 102-2', 1, 'LANTAI1PDP'),
 (222, 'AZALEA 105-1', 1, 'LANTAI1PDP'),
 (223, 'AZALEA 105-2', 1, 'LANTAI1PDP'),
-(224, 'KEMUNING 201', 3, 'LANTAI2RBA1'),
-(225, 'KEMUNING 304', 3, 'LANTAI3OBG'),
-(226, 'ALAMANDA 306', 3, 'LANTAI3OBG'),
+(224, 'KEMUNING 201', 1, 'LANTAI2RBA1'),
+(225, 'KEMUNING 304', 1, 'LANTAI3OBG'),
+(226, 'ALAMANDA 306', 1, 'LANTAI3OBG'),
 (227, 'AZALEA 308-1', 1, 'LANTAI3OBG'),
 (228, 'AZALEA 308-2', 1, 'LANTAI3OBG'),
 (229, 'TANJUNG 309-1', 1, 'LANTAI3OBG'),
@@ -282,8 +231,8 @@ INSERT INTO `kamar` (`id_kamar`, `nama_kamar`, `kapasitas`, `group_kamar`) VALUE
 (242, '1 (ISOLASI TEKNANAN AKTIF)', 1, 'LANTAI3NEO'),
 (243, '2  (ISOLASI TEKNANAN AKTIF)', 1, 'LANTAI3NEO'),
 (244, '3  (ISOLASI TEKNANAN AKTIF)', 1, 'LANTAI3NEO'),
-(245, 'ALAMANDA 403', 3, 'LANTAI4PDW'),
-(246, 'ALAMANDA 405', 3, 'LANTAI4PDW'),
+(245, 'ALAMANDA 403', 1, 'LANTAI4PDW'),
+(246, 'ALAMANDA 405', 1, 'LANTAI4PDW'),
 (247, 'AZALEA 402-1', 1, 'LANTAI4PDW'),
 (248, 'AZALEA 402-2', 1, 'LANTAI4PDW'),
 (249, 'AZALEA 404-1', 1, 'LANTAI4PDW'),
@@ -294,7 +243,7 @@ INSERT INTO `kamar` (`id_kamar`, `nama_kamar`, `kapasitas`, `group_kamar`) VALUE
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pasien`
+-- Table structure for table `pasien`
 --
 
 CREATE TABLE `pasien` (
@@ -306,7 +255,7 @@ CREATE TABLE `pasien` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `reservasi`
+-- Table structure for table `reservasi`
 --
 
 CREATE TABLE `reservasi` (
@@ -324,7 +273,7 @@ CREATE TABLE `reservasi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `reservasi`
+-- Dumping data for table `reservasi`
 --
 
 INSERT INTO `reservasi` (`id_reservasi`, `nama_pasien`, `penanggungjawab`, `id_kamar`, `tgl_masuk`, `tgl_keluar`, `tgl_booking`, `keterangan`, `status_booking`, `status_kamar`, `no_kamar`) VALUES
@@ -341,12 +290,16 @@ INSERT INTO `reservasi` (`id_reservasi`, `nama_pasien`, `penanggungjawab`, `id_k
 (41, 'BROKU', 'AIA', 60, '2020-10-23 11:25:14', '2020-10-23 11:25:39', '2020-10-23 04:25:39', 'Pindah', 'MRS', 'keluar', '1'),
 (42, 'Siska', 'AXA', 56, '2020-10-23 11:26:33', NULL, '2020-10-23 04:26:33', 'Terisi', 'MRS', 'masuk', '1'),
 (43, 'Sera', 'ASA', 156, '2020-10-24 01:12:46', NULL, '2020-10-23 18:12:46', 'Terisi', 'MRS', 'masuk', '2'),
-(44, 'Anton', 'ADA', 168, '2020-10-24 01:13:31', NULL, '2020-10-23 18:13:31', 'Terisi', 'MRS', 'masuk', '1');
+(44, 'Anton', 'ADA', 168, '2020-10-24 01:13:31', NULL, '2020-10-23 18:13:31', 'Terisi', 'MRS', 'masuk', '1'),
+(45, 'dea gita', 'HARIS', 5, '2022-01-22 00:00:00', '2022-01-23 00:00:00', '2022-01-21 01:14:49', '', 'Booking', 'Booking', '1'),
+(46, 'diki', 'axa', 6, '2022-01-21 08:15:31', NULL, '2022-01-21 01:15:31', 'Terisi', 'MRS', 'masuk', '1'),
+(47, 'dita', 'prudential', 217, '2022-01-21 08:20:42', NULL, '2022-01-21 04:40:23', 'Terisi', 'MRS', 'masuk', '1'),
+(48, 'cena', 'prudential', 7, '2022-01-22 00:00:00', '2022-01-23 00:00:00', '2022-01-21 04:28:26', '', 'Booking', 'Booking', '1');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user_admin`
+-- Table structure for table `user_admin`
 --
 
 CREATE TABLE `user_admin` (
@@ -361,7 +314,7 @@ CREATE TABLE `user_admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `user_admin`
+-- Dumping data for table `user_admin`
 --
 
 INSERT INTO `user_admin` (`user_id`, `name`, `email`, `username`, `password`, `avatar`, `level`, `status`) VALUES
@@ -373,53 +326,53 @@ INSERT INTO `user_admin` (`user_id`, `name`, `email`, `username`, `password`, `a
 --
 
 --
--- Indeks untuk tabel `kamar`
+-- Indexes for table `kamar`
 --
 ALTER TABLE `kamar`
   ADD PRIMARY KEY (`id_kamar`);
 
 --
--- Indeks untuk tabel `pasien`
+-- Indexes for table `pasien`
 --
 ALTER TABLE `pasien`
   ADD PRIMARY KEY (`id_pasien`);
 
 --
--- Indeks untuk tabel `reservasi`
+-- Indexes for table `reservasi`
 --
 ALTER TABLE `reservasi`
   ADD PRIMARY KEY (`id_reservasi`);
 
 --
--- Indeks untuk tabel `user_admin`
+-- Indexes for table `user_admin`
 --
 ALTER TABLE `user_admin`
   ADD PRIMARY KEY (`user_id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `kamar`
+-- AUTO_INCREMENT for table `kamar`
 --
 ALTER TABLE `kamar`
   MODIFY `id_kamar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=253;
 
 --
--- AUTO_INCREMENT untuk tabel `pasien`
+-- AUTO_INCREMENT for table `pasien`
 --
 ALTER TABLE `pasien`
   MODIFY `id_pasien` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `reservasi`
+-- AUTO_INCREMENT for table `reservasi`
 --
 ALTER TABLE `reservasi`
-  MODIFY `id_reservasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id_reservasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
--- AUTO_INCREMENT untuk tabel `user_admin`
+-- AUTO_INCREMENT for table `user_admin`
 --
 ALTER TABLE `user_admin`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
