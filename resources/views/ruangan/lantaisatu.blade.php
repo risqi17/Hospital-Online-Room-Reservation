@@ -360,7 +360,7 @@
                             <div class="card-header text-white">AZALEA 102-2</div>
                         @else
                             <div id="icu1" class="card bg-light">
-                                <div class="card-header ">AZALEA 102-1</div>
+                                <div class="card-header ">AZALEA 102-2</div>
                 @endif
                 @if (checkUtama(221) == true)
                     <div class="card-header" style="margin-top: -25px; margin-bottom: -20px">

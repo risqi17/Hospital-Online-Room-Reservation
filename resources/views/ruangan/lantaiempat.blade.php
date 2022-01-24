@@ -469,13 +469,13 @@
             <a href="#" data-toggle="modal" data-target="#ChoiceModal250">
                 @if ($k250->hasil > 0)
                     <div id="icu1" class="card bg-primary">
-                        <div class="card-header text-white">ALAMANDA 404</div>
+                        <div class="card-header text-white">AZALEA 404-2</div>
                     @elseif ($bk250 > 0)
                         <div id="icu1" class="card bg-warning">
-                            <div class="card-header text-white">ALAMANDA 404</div>
+                            <div class="card-header text-white">AZALEA 404-2</div>
                         @else
                             <div id="icu1" class="card bg-light">
-                                <div class="card-header ">ALAMANDA 404</div>
+                                <div class="card-header ">AZALEA 404-2</div>
                 @endif
                 @if (checkUtama(250) == true)
                     <div class="card-header" style="margin-top: -25px; margin-bottom: -20px">
