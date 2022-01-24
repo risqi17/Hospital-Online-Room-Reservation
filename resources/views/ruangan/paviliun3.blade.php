@@ -129,7 +129,7 @@
                             @endif
                             @if (checkUtama(52) == true)
                                 <div class="card-header" style="margin-top: -25px; margin-bottom: -20px">
-                                    <span class="badge badge-success mr-10">Kamar 1 / Utama</span>
+                                    <span class="badge badge-success mr-10">Kelas 1 / Utama</span>
                                 </div>
                             @endif
 
@@ -191,7 +191,7 @@
                         @endif
                         @if (checkUtama(53) == true)
                             <div class="card-header" style="margin-top: -25px; margin-bottom: -20px">
-                                <span class="badge badge-success mr-10">Kamar 1 / Utama</span>
+                                <span class="badge badge-success mr-10">Kelas 1 / Utama</span>
                             </div>
                         @endif
 
@@ -250,7 +250,7 @@
                     @endif
                     @if (checkUtama(54) == true)
                         <div class="card-header" style="margin-top: -25px; margin-bottom: -20px">
-                            <span class="badge badge-success mr-10">Kamar 1 / Utama</span>
+                            <span class="badge badge-success mr-10">Kelas 1 / Utama</span>
                         </div>
                     @endif
 
@@ -309,7 +309,7 @@
                     @endif
                     @if (checkUtama(55) == true)
                         <div class="card-header" style="margin-top: -25px; margin-bottom: -20px">
-                            <span class="badge badge-success mr-10">Kamar 1 / Utama</span>
+                            <span class="badge badge-success mr-10">Kelas 1 / Utama</span>
                         </div>
                     @endif
 
@@ -368,7 +368,7 @@
                 @endif
                 @if (checkUtama(56) == true)
                     <div class="card-header" style="margin-top: -25px; margin-bottom: -20px">
-                        <span class="badge badge-success mr-10">Kamar 1 / Utama</span>
+                        <span class="badge badge-success mr-10">Kelas 1 / Utama</span>
                     </div>
                 @endif
 
@@ -424,7 +424,7 @@
                 @endif
                 @if (checkUtama(57) == true)
                     <div class="card-header" style="margin-top: -25px; margin-bottom: -20px">
-                        <span class="badge badge-success mr-10">Kamar 1 / Utama</span>
+                        <span class="badge badge-success mr-10">Kelas 1 / Utama</span>
                     </div>
                 @endif
 
@@ -483,7 +483,7 @@
                 @endif
                 @if (checkUtama(58) == true)
                     <div class="card-header" style="margin-top: -25px; margin-bottom: -20px">
-                        <span class="badge badge-success mr-10">Kamar 1 / Utama</span>
+                        <span class="badge badge-success mr-10">Kelas 1 / Utama</span>
                     </div>
                 @endif
 
@@ -546,7 +546,7 @@
                     @endif
                     @if (checkUtama(59) == true)
                         <div class="card-header" style="margin-top: -25px; margin-bottom: -20px">
-                            <span class="badge badge-success mr-10">Kamar 1 / Utama</span>
+                            <span class="badge badge-success mr-10">Kelas 1 / Utama</span>
                         </div>
                     @endif
 
@@ -602,7 +602,7 @@
                 @endif
                 @if (checkUtama(60) == true)
                     <div class="card-header" style="margin-top: -25px; margin-bottom: -20px">
-                        <span class="badge badge-success mr-10">Kamar 1 / Utama</span>
+                        <span class="badge badge-success mr-10">Kelas 1 / Utama</span>
                     </div>
                 @endif
 
@@ -661,7 +661,7 @@
                 @endif
                 @if (checkUtama(61) == true)
                     <div class="card-header" style="margin-top: -25px; margin-bottom: -20px">
-                        <span class="badge badge-success mr-10">Kamar 1 / Utama</span>
+                        <span class="badge badge-success mr-10">Kelas 1 / Utama</span>
                     </div>
                 @endif
 
@@ -717,7 +717,7 @@
                 @endif
                 @if (checkUtama(62) == true)
                     <div class="card-header" style="margin-top: -25px; margin-bottom: -20px">
-                        <span class="badge badge-success mr-10">Kamar 1 / Utama</span>
+                        <span class="badge badge-success mr-10">Kelas 1 / Utama</span>
                     </div>
                 @endif
 

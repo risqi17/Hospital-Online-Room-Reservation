@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 22 Jan 2022 pada 09.01
+-- Waktu pembuatan: 23 Jan 2022 pada 05.14
 -- Versi server: 10.4.21-MariaDB
 -- Versi PHP: 7.4.23
 
@@ -192,9 +192,9 @@ INSERT INTO `kamar` (`id_kamar`, `nama_kamar`, `kapasitas`, `group_kamar`) VALUE
 (202, 'FLAMBOYAN 119-2', 1, 'PAVILIUN1'),
 (203, 'FLAMBOYAN 120-1', 1, 'PAVILIUN1'),
 (204, 'FLAMBOYAN 120-2', 1, 'PAVILIUN1'),
-(205, 'ICU ISOLASI 109', 1, 'PAVILIUN1'),
-(206, 'ICU ISOLASI 110', 1, 'PAVILIUN1'),
-(207, 'ICU ISOLASI 111', 1, 'PAVILIUN1'),
+(205, 'ICU ISOLASI 109-1', 1, 'PAVILIUN1'),
+(206, 'ICU ISOLASI 110-1', 1, 'PAVILIUN1'),
+(207, 'ICU ISOLASI 111-1', 1, 'PAVILIUN1'),
 (208, 'ISOLASI 105-1', 1, 'PAVILIUN1'),
 (209, 'ISOLASI 105-2', 1, 'PAVILIUN1'),
 (210, 'ISOLASI 107-1', 1, 'PAVILIUN1'),
@@ -238,7 +238,10 @@ INSERT INTO `kamar` (`id_kamar`, `nama_kamar`, `kapasitas`, `group_kamar`) VALUE
 (249, 'AZALEA 404-1', 1, 'LANTAI4PDW'),
 (250, 'AZALEA 404-2', 1, 'LANTAI4PDW'),
 (251, 'SERUNI 411-5', 1, 'LANTAI4PDW'),
-(252, 'SERUNI 411-6', 1, 'LANTAI4PDW');
+(252, 'SERUNI 411-6', 1, 'LANTAI4PDW'),
+(253, 'ICU ISOLASI 109-2', 1, 'PAVILIUN1'),
+(254, 'ICU ISOLASI 110-2', 1, 'PAVILIUN1'),
+(255, 'ICU ISOLASI 111-2', 1, 'PAVILIUN1');
 
 -- --------------------------------------------------------
 
@@ -297,7 +300,8 @@ INSERT INTO `reservasi` (`id_reservasi`, `nama_pasien`, `penanggungjawab`, `id_k
 (47, 'dita', 'prudential', 217, '2022-01-21 08:20:42', NULL, '2022-01-21 04:40:23', 'Terisi', 0, 'MRS', 'masuk', '1'),
 (48, 'cena', 'prudential', 7, '2022-01-22 00:00:00', '2022-01-23 00:00:00', '2022-01-22 07:25:49', 'Terisi', 0, 'MRS', 'masuk', '1'),
 (50, 'Tera', 'Umum', 21, '2022-01-22 14:26:50', NULL, '2022-01-22 07:26:50', 'Terisi', 1, 'MRS', 'masuk', '1'),
-(51, 'Wera', 'Umum', 5, '2022-01-22 14:29:42', NULL, '2022-01-22 07:29:42', 'Terisi', 1, 'MRS', 'masuk', '1');
+(51, 'Wera', 'Umum', 5, '2022-01-22 14:29:42', NULL, '2022-01-22 07:29:42', 'Terisi', 1, 'MRS', 'masuk', '1'),
+(52, 'Suhali', 'Umum', 253, '2022-01-23 10:52:22', NULL, '2022-01-23 03:52:22', 'Terisi', 1, 'MRS', 'masuk', '1');
 
 -- --------------------------------------------------------
 
@@ -360,7 +364,7 @@ ALTER TABLE `user_admin`
 -- AUTO_INCREMENT untuk tabel `kamar`
 --
 ALTER TABLE `kamar`
-  MODIFY `id_kamar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=253;
+  MODIFY `id_kamar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=256;
 
 --
 -- AUTO_INCREMENT untuk tabel `pasien`
@@ -372,7 +376,7 @@ ALTER TABLE `pasien`
 -- AUTO_INCREMENT untuk tabel `reservasi`
 --
 ALTER TABLE `reservasi`
-  MODIFY `id_reservasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `id_reservasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT untuk tabel `user_admin`
